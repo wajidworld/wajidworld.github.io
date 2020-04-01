@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://linuxhero.tk/#home">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+      <a href="http://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+      <a href="http://linuxhero.tk/linuxcommands/">Linux Commands</a>
+      <a href="http://linuxhero.tk/nfs/">Configure NFS SERVER</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+    <a href="http://linuxhero.tk/#Topics">New Topics</a>
+    <a href="http://linuxhero.tk/#about">About</a>
+    <a href="http://linuxhero.tk/#contact">Contact Us</a>
+  </div>
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+  <div class="w3-container">
+  <div class="w3-content" style="max-width:700px">
+   <h4 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Configure NFS Server</span></h4>
+   <h3>I will use below example in order to Configure NFS Server to share directories on your Network.</h3>
+    <h4 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">[NFS Server] 192.0.0.30<---->192.0.0.31 [NFS Client]
+    <br> server.example.com<-------------->client.example.com
+    </span></h4>
+    <p>If Firewalld is running, please allow NFS service.<p>
+    <h4 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">[root@server ~]# firewall-cmd --add-service=nfs --permanent<br>[root@server ~]# firewall-cmd --reload
+</span></h4>
+    
+
+<h3>Although the steps may differ depending on the distribution that you’re using, usually you can find the command line in the Utilities section.</h3>
+
+<h3>Now that you’re all set, let’s get started, shall we?</h3>
+    <p>1. pwd command:-<p>
+<p>Use the pwd command to find out the path of the current directory (folder) you’re in. The command will return an absolute (full) path, which is basically a path that starts with a forward slash (/). An example of an absolute path is /home/username.<p>
+
+<p>2. cd command:-<p>
+<p>To navigate through the Linux filesystem, use the cd command. It requires either the full path or the name of the directory, depending on the current directory you’re in.
+
+Let’s say you’re in /home/username/Documents and want to go to Photos, a subdirectory of Documents. To do so, simply type cd Photos.
+
+Another scenario is if you want to switch to a completely new directory, say /home/username/Movies. In this case, you have to type cd followed by the directory’s absolute path.
+
+There are some shortcuts if you want to navigate quickly. Use cd.. (with two dots) to move one directory up, or go straight to the home folder with cd. To move to your previous directory, type cd- (with a hyphen).
+
+On a side note, Linux’s shell is case sensitive. Hence, you have to type the name’s directory exactly as it is.<p>
+
+<p>3. ls command:-<p>
+<p>ls command is used to view the contents of a directory. By default, this command will display the contents of your current directory.
+
+If you want to see the content of other directories, type ls and then the directory’s path. For example, enter ls /home/username/Documents to view the content of Documents.<p>
+
+<p>4. cat command:-<p>
+<p>cat is one of the most frequently used command in Linux. It is used to view the content of a file on the standard output (sdout). To run this command, type cat followed by the file’s name and its extension. For instance: cat file.txt.<p>
+
+<p>5. cp command:-<p>
+<p>Use the cp command to copy files from the present directory. For instance, the command cp scenery.jpg /home/username/Pictures would create a copy of scenery.jpg to the Pictures directory.<p>
+
+<p>6. mv command:-<p>
+<p>The primary use of the mv command is to move files, although it can also be used to rename files.<p>
+<p>The arguments in this command are similar to the cp command. You need to type mv, the file’s name, and the destination’s directory. For example: mv file.txt /home/username/Documents.<p>
+
+To rename files, the syntax is mv oldname.ext newname.ext<p>
+
+<p>7. mkdir command:-<p>
+<p>Use mkdir command to make a new directory — like mkdir Music will create a new directory called Music.<p>
+
+<p>8. rmdir command:-<p>
+<p>If you need to delete a directory, use the rmdir command. However, rmdir only allows you to delete empty directories.<p>
+
+<p>9. rm command:-<p>
+<p>The rm command is used to delete directories along with the contents within them. If you only want to delete the directory — as an alternative to rmdir — use rm -r.<p>
+
+<p>10. touch command:-<p>
+<p>The touch command allows you to create blank new files through the command line. As an example, enter touch /home/username/Documents/Web.html to create an HTML file entitled Web under the Documents directory.<p>
+
+<p>11. locate command:-<p>
+<p>You can use this command to locate a file, just like the search command in Windows. What’s more, using the -i argument along with this command will make it case-insensitive, so you can search for a file even if you don’t remember its exact name.<p>
+
+<p>To search for a file that contains two or more words, use an asterisk (*). For example, locate -i school*note command will search for any file that contains the word “school” and “note”, no matter if it is uppercase or lowercase.<>
+
+<p>12. find command:-<p>
+<p>Similar to the locate command, using find also searches for files. The difference is, you use the find command to locate files within a given directory.<p>
+  
+<p>As an example, find /home/ -name notes.txt command will search for a file called notes.txt within the home directory and its subdirectories.<p>
+
+<p>13. grep command:-<p>
+<p>Another command that is undoubtedly very useful for everyday use. grep lets you search through all the text through a given file.<p>
+
+<p>To illustrate, grep blue notepad.txt will search for the word blue in the notepad file. Lines that contain the searched word will be displayed fully.<p>
+
+<p>14. sudo command:-<p>
+<p>Short for “SuperUser Do”, this command enables you to perform tasks that require administrative or root permissions. However, it is not advisable to use this command for daily use because it might be easy for an error to occur if you did something wrong.<p>
+
+<p>15. df command:-<p>
+<p>Use df command to get a report on the system’s disk space usage, shown in percentage and KBs. If you want to see the report in megabytes, type df -m.<p>
+
+<p>16. du command:-<p>
+<p>If you want to check how much space a file or a directory takes, the du (Disk Usage) command is the answer. However, the disk usage summary will show disk block numbers instead of the usual size format. If you want to see it in bytes, kilobytes, and megabytes, add the -h argument to the command line.<p>
+
+<p>17. head command:-<p>
+<p>The head command is used to view the first lines of any text file. By default, it will show the first ten lines, but you can change this number to your liking. For example, if you only want to show the first five lines, type head -n 5 filename.ext.<p>
+
+<p>18. tail command:-<p>
+<p>This one has a similar function to the head command, but instead of showing the first lines, the tail command will display the last ten lines of a text file.<p>
+
+<p>19. diff command:-<p>
+<p>Short for difference, the diff command compares the content of two files line by line. After analyzing the files, it will output the lines that do not match. Programmers often use this command when they need to make some program alterations instead of rewriting the entire source code.<p>
+
+<p>The simplest form of this command is diff file1.ext file2.ext<p>
+
+<p>20. tar command:-<p>
+<p>The tar command is the most widely used command to archive multiple files into a tarball — a common Linux file format that is similar to zip format, but compression is optional.<p>
+
+<p>This command is quite complex with a long list of functions such as adding new files into an existing archive, listing the content of an archive, extracting the content from an archive, and many more. Check out some practical examples to know more about other functions.<p>
+
+<p>21. chmod command:-<p>
+<p>chmod is another essential command, used to change the read, write, and execute permissions of files and directories. As this command is rather complicated, you can read the full tutorial in order to execute it properly.<p>
+
+<p>22. chown command:-<p>
+<p>In Linux, all files are owned by a specific user. The chown command enables you to change or transfer the ownership of a file to the specified username. For instance, chown linuxuser2 file.ext will make linuxuser2 as the owner of the file.ext.<p>
+
+<p>23. jobs command:-<p>
+<p>jobs command will display all current jobs along with their statuses. A job is basically a process that is started by the shell.<p>
+
+<p>24. kill command:-<p>
+<p>If you have an unresponsive program, you can terminate it manually by using the kill command. It will send a certain signal to the misbehaving app and instructs the app to terminate itself.<p>
+
+<p>There is a total of sixty-four signals that you can use, but people usually only use two signals:<p>
+
+<p>SIGTERM (15) — requests a program to stop running and gives it some time to save all of its progress. If you don’t specify the signal when entering the kill command, this signal will be used.
+SIGKILL (9) — forces programs to stop immediately. Unsaved progress will be lost.
+Besides knowing the signals, you also need to know the process identification number (PID) of the program you want to kill. If you don’t know the PID, simply run the command ps ux.
+<p>
+<p>After knowing what signal you want to use and the PID of the program, enter the following syntax:<p>
+
+<p>kill [signal option] PID.<p>
+
+<p>25. ping command:-<p>
+<p>Use the ping command to check your connectivity status to a server. For example, by simply entering ping google.com, the command will check whether you’re able to connect to Google and also measure the response time.<p>
+
+<p>26. wget command:-<p>
+<p>The Linux’s command line is super useful — you can even download files from the internet with the help of the wget command. To do so, simply type wget followed by the download link.<p>
+
+<p>27. uname command:-<p>
+<p>The uname command, short for Unix Name, will print detailed information about your Linux system like the machine name, operating system, kernel, and so on.<p>
+
+<p>28. top command:-<p>
+<p>As a terminal equivalent to Task Manager in Windows, the top command will display a list of running processes and how much CPU each process uses. It’s very useful to monitor the system resource usage, especially knowing which process needs to be terminated because it consumes too many resources.<p>
+
+<p>29. history command:-<p>
+<p>When you’ve been using Linux for a certain period of time, you’ll quickly notice that you can run hundreds of commands every day. As such, running history command is particularly useful if you want to review the commands you’ve entered before.<p>
+
+<p>30. man command:-<p>
+<p>Confused about the function of certain commands? Don’t worry, you can easily learn how to use them right from Linux’s shell by using the man command. For instance, entering man tail will show the manual instruction of the tail command.<p>
+    </div>
+  </div>
+   
+<!-- Menu Container -->
+
+
+<!-- Contact/Area Container -->
+ 
+<div class="w3-container" id="contact">
+    <h2>Please email me if you face any issue.</h2>
+    <form action="mailto:Mdsulemanroayl23@gmail.com" method="get" enctype="text/plain">
+      <p>Name: <input type="text" name="name"/></p>
+      <p>Email: <input type="text" name="email"/></p>
+      <p>Comments:
+        <br />
+        <textarea name="comments" rows = "12" cols = "35">Send your comments to owner.</textarea>
+        <br>
+      <p><input type="submit" name="submit" value="Send" />
+        <form action="mailto:allishah2490@gmail.com" 
+         enctype="text/plain" onsubmit="location.href='thanks.html';" >
+        <input type="reset" name="reset" value="Clear Form" />
+      </p>
+    </form>
+  </body>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
