@@ -132,7 +132,8 @@ body, html {
   </div>
      
 <!-- Content -->
-<div style="background-color: #cfc ; padding: 10px; border: 1px solid black;">
+<div style="background-color: #000000 ; padding: 10px; border: 1px solid black;">
+<prev>  
 Configure NFS Server to share directories onn your Network. This example is based on the environment below.
 <br> [NFS Server]    |192.0.0.20 | 192.0.0.30|     [NFS Client]
 <br> dlp.srv.worldd   <----------------------->    www.srv.world  
@@ -145,6 +146,7 @@ Configure NFS Server to share directories onn your Network. This example is base
 <br>/home 192.0.0.0/24(rw,no_root_squash)
 <br>[root@server ~]# systemctl start rpcbind nfs-server
 <br>[root@server ~]# systemctl enable rpcbind nfs-server
+</pre>
 </div>
 
 <!-- Menu Container -->
