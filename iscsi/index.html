@@ -134,8 +134,7 @@ body, html {
   <div class="w3-content" style="max-width:1000px">
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
 Configure iSCSI Target (Targetcli)</span></h5>
-    <p><b>	
-Configure Storage Server with iSCSI.<b><p>
+    <p><b>Configure Storage Server with iSCSI.<b><p>
   <h5 <span class="w3-tag w3-red">[iSCSI Target]  |192.0.0.20 ---------------- 192.0.0.30|      [iSCSI Initiator] <br>Server.example.com     <--------------------->      Client.example.com</span></h5>
   <p><b>Configure iSCSI Target:-<b><p>
 <h5><span class="w3-code w3-black"> [root@server ~]# yum install targetcli -y
@@ -218,7 +217,22 @@ Created LUN 1.
 <br>Created mapped LUN 1.
 <br>Created mapped LUN 0.
   </span></h5>
-
+<p><b>Saving Changes<d><p>
+<p>To save the configuration, simply exit<p>
+  <h5><span class="w3-code w3-black">/iscsi/iqn.20...get/tpg1/acls> cd ../..
+ <br>/iscsi/iqn.20...m:target> exit
+<br>Global pref auto_save_on_exit=true
+<br>Last 10 configs saved in /etc/target/backup.
+<br>Configuration saved to /etc/target/saveconfig.json
+ </span></h5>
+    <p><b>iSCSI Firewall Rules<b><p>
+   <h5><span class="w3-code w3-black"> [root@server ~]# netstat -antup | grep 3260
+<br>tcp    0    0 0.0.0.0:3260    0.0.0.0:*    LISTEN      -
+<br>[root@server ~]# firewall-cmd --permanent --add-port=3260/tcp
+<br>success
+<br>[root@server ~]# firewall-cmd --reload
+<br>success
+     </span></h5>
 <!-- Menu Container -->
 
 
