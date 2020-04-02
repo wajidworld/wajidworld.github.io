@@ -132,19 +132,19 @@ body, html {
   </div>
      
 <!-- Content -->
-<div style="background-color: #cfc ; padding: 10px; border: 1px solid green;">
+<div style="background-color: #cfc ; padding: 10px; border: 1px green;">
 Configure NFS Server to share directories onn your Network. This example is based on the environment below.
 <br> [NFS Server]    |192.0.0.20 | 192.0.0.30|     [NFS Client]
 <br> dlp.srv.worldd   <----------------------->    www.srv.world  
 <br> [root@server ~]# yumm -y install nfs-util
 <br>[root@server ~]# i /etc/idmapd.conf
 <br># line 5: uncomment and change to your domain name
-Domain = example.com
-[root@server ~]# vi /etc/exports
-# write settings for NFS exports
-/home 192.0.0.0/24(rw,no_root_squash)
-[root@server ~]# systemctl start rpcbind nfs-server
-[root@server ~]# systemctl enable rpcbind nfs-server
+<br>Domain = example.com
+<br>[root@server ~]# vi /etc/exports
+<br># write settings for NFS exports
+<br>/home 192.0.0.0/24(rw,no_root_squash)
+<br>[root@server ~]# systemctl start rpcbind nfs-server
+<br>[root@server ~]# systemctl enable rpcbind nfs-server
 </div>
 
 <!-- Menu Container -->
