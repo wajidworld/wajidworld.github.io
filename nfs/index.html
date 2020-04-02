@@ -128,15 +128,22 @@ body, html {
 <div class="w3-sand w3-grayscale w3-large">
      
 <!-- Content -->
+<div class="w3-container">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Configure NFS SERVER</span></h5>
+    <p>Configure NFS Server to share directories on your Network.
+This example is based on the environment below.<p>
+ </div>
+</div> 
+  
 <style>
-
 h3 {
   background-color: black;
   color: white;
 }
 </style>
 </head>
-<h3>[root@server ~]# i /etc/idmapd.conf
+<h5>[root@server ~]# i /etc/idmapd.conf
 <br># line 5: uncomment and change to your domain name
 <br>Domain = example.com
 <br>[root@server ~]# vi /etc/exports
@@ -144,7 +151,7 @@ h3 {
 <br>/home 192.0.0.0/24(rw,no_root_squash)
 <br>[root@server ~]# systemctl start rpcbind nfs-server
 <br>[root@server ~]# systemctl enable rpcbind nfs-server
-</h3>
+</h5>
 
 
 <!-- Menu Container -->
