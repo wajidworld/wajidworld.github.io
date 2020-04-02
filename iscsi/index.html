@@ -178,9 +178,46 @@ Configure Storage Server with iSCSI.<b><p>
  <br> o- loopback ...................................... [Targets: 0]
 </span></h5>
  
-  
-
-
+<p><b>Create the iSCSI Target and Portal<b><p>
+  <h5><span class="w3-code w3-black">/> iscsi/
+<br>/iscsi> create iqn.2020-04.example.com:taget
+<br>Created target iqn.2020-04.example.com:taget.
+<br>Created TPG 1.
+<br>Global pref auto_add_default_portal=true
+<br>Created default portal listening on all IPs (0.0.0.0), port 3260.
+ <br>
+ <br>
+ <br>/iscsi> ls
+<br>o- iscsi ............................. [Targets: 1]
+  <br>o- iqn.2020-04.example.com:taget ..... [TPGs: 1]
+    <br>o- tpg1 ................ [n<br>o-gen-acls, n<br>o-auth]
+      <br>o- acls ........................... [ACLs: 0]
+      <br>o- luns ........................... [LUNs: 0]
+      <br>o- portals ..................... [Portals: 1]
+        <br>o- 0.0.0.0:3260 ...................... [OK]
+    <br>
+    <br>
+    <br>/iscsi> iqn.2020-04.example.com:taget/tpg1/
+    <br>/iscsi/iqn.20...m:target/tpg1> luns/ create /backstores/fileio/testfile
+Created LUN 0.
+<br>
+<br>/iscsi/iqn.20...m:target/tpg1> luns/ create /backstores/block/block
+Created LUN 1.
+    </span></h5>
+  <p><b>Create an ACL<b><p>
+    <p>Now we need to configure an access control list (ACL) to define the initiators that are actually allowed to connect to the iSCSI target.<p>
+  <p>To do this, go to the client system that will be our iSCSI initiator and get the contents of the /etc/iscsi/initiatorname.iscsi file – you can edit this file if you want, otherwise the default is fine.<p>
+<h5><span class="w3-code w3-black">
+  [root@client ~]# cat /etc/iscsi/initiatorname.iscsi
+<br>InitiatorName=iqn.2020-04.example.com
+ </span></h5> 
+<p>Now that we have the name of our initiator from the client system, we enter the ACL section on the server within the TPG.<p>  
+<h5><span class="w3-code w3-black">/iscsi/iqn.20...m:target/tpg1> acls/
+  <br>/iscsi/iqn.20...get/tpg1/acls> create <br>iqn.2020-04.example.com
+<br>Created Node ACL for <br>iqn.2020-04.example.com
+<br>Created mapped LUN 1.
+<br>Created mapped LUN 0.
+  </span></h5>
 
 <!-- Menu Container -->
 
