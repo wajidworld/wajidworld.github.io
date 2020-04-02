@@ -83,7 +83,7 @@ body, html {
      <div class="dropdown-content">
       <a href="http://linuxhero.tk/linuxinfo/">Linux Introduction</a>
       <a href="http://linuxhero.tk/linuxdistros/">Linux Distributions</a>
-       <a href="http://linuxhero.tk/nfs/">Linux Distributions</a>
+       <a href="http://linuxhero.tk/nfs/">Configure NFS</a>
       
      </div>
     </div> 
@@ -135,10 +135,10 @@ body, html {
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">Configure NFS SERVER</span></h5>
     <p><b>Configure NFS Server to share directories on your Network.
 This example is based on the environment below.<b><p>
-  <h5 <span class="w3-tag w3-green">[NFS Server]  |192.0.0.20 ---------------- 192.0.0.30|      [NFS Client] <br>Server.example.com     <--------------------->      Client.example.com</span></h5>
+  <h5 <span class="w3-tag w3-red">[NFS Server]  |192.0.0.20 ---------------- 192.0.0.30|      [NFS Client] <br>Server.example.com     <--------------------->      Client.example.com</span></h5>
   <p><b>Server Configuration:-<b><p>
-<h5><span class="w3-code w3-black"> 
-[root@server ~]# vi /etc/idmapd.conf
+<h5><span class="w3-code w3-black"> [root@server ~]# yum -y install nfs-utils
+<br>[root@server ~]# vi /etc/idmapd.conf
 <br># line 5: uncomment and change to your domain name
 <br>Domain = example.com          
 <br>
