@@ -131,23 +131,17 @@ body, html {
 <div style="max-width:1200px">
 
   <div class="w3-content" style="max-width:1000px">
-    <h5><span class="w3-tag w3-black">Configure NFS SERVER</span></h5>
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">Configure NFS SERVER</span></h5>
     <h5 class="w3-tag w3-black">Configure NFS Server to share directories on your Network.
 This example is based on the environment below.</h5>
   <h5 <span class="w3-tag w3-black">[NFS Server]  |192.0.0.20 ---------------- 192.0.0.30|      [NFS Client] <br>Server.example.com     <--------------------->      Client.example.com</span></h5>
   <h5><span class="w3-tag w3-black">Server Configuration:-</span></h5>
-</div>
-</div>
-<style>
-p {
-  background-color: black;
-  color: white;
-}
-<p>[root@server ~]# vi /etc/idmapd.conf
+<h5><span class="w3-block w3-black">     
+[root@server ~]# vi /etc/idmapd.conf
   
 <br># line 5: uncomment and change to your domain name
 <br>
-<br>Domain = example.com
+<br>Domain = example.com          
 <br>
 <br>[root@server ~]# vi /etc/exports
 <br>
@@ -158,14 +152,18 @@ p {
 <br>[root@server ~]# systemctl start rpcbind nfs-server
 <br>
 <br>[root@server ~]# systemctl enable rpcbind nfs-server
-</p>
+</p></span></h5>
+<p>
+</div>
+</div>
+
 
 
 <!-- Menu Container -->
 
 
 <!-- Contact/Area Container -->
- 
+
 <div class="w3-container" id="contact">
     <h2>Please email me if you face any issue.</h2>
     <form action="mailto:Mdsulemanroayl23@gmail.com" method="get" enctype="text/plain">
