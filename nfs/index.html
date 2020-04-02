@@ -126,19 +126,17 @@ body, html {
 
 <!-- Add a background color and large text to the whole page -->
 <div class="w3-sand w3-grayscale w3-large">
-  <div class="w3-container">
-  <div class="w3-content" style="max-width:700px">
-   <img src="/distributions.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
-  </div>
      
 <!-- Content -->
-<div style="background-color: #000000 ; padding: 10px; border: 1px solid black;">
-<prev>  
-Configure NFS Server to share directories onn your Network. This example is based on the environment below.
-<br> [NFS Server]    |192.0.0.20 | 192.0.0.30|     [NFS Client]
-<br> dlp.srv.worldd   <----------------------->    www.srv.world  
-<br> [root@server ~]# yumm -y install nfs-util
-<br>[root@server ~]# i /etc/idmapd.conf
+<style>
+
+h3 {
+  background-color: black;
+  color: white;
+}
+</style>
+</head>
+<h3>[root@server ~]# i /etc/idmapd.conf
 <br># line 5: uncomment and change to your domain name
 <br>Domain = example.com
 <br>[root@server ~]# vi /etc/exports
@@ -146,8 +144,8 @@ Configure NFS Server to share directories onn your Network. This example is base
 <br>/home 192.0.0.0/24(rw,no_root_squash)
 <br>[root@server ~]# systemctl start rpcbind nfs-server
 <br>[root@server ~]# systemctl enable rpcbind nfs-server
-</pre>
-</div>
+</h3>
+
 
 <!-- Menu Container -->
 
