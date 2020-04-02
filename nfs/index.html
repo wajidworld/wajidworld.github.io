@@ -174,17 +174,14 @@ This example is based on the environment below.<b><p>
 <br>Filesystem              Type      Size  Used Avail Use% Mounted on
 <br>Server.example.com:/home  nfs4       45G  1.4G   63G   5% /home
 <br># /home from NFS server is mounted
-<br>
 </span></h5>
-
-
+  
 <p><b>Mount it on fstab so it remains after the system boots.<b><p>
 <br>
 <br>
 <h5><span class="w3-code w3-black">[root@Client ~]# vi /etc/fstab
 <br># add like follows to the end
-<br>server.example.com:/home  /home                   nfs     defaults        0 0
-<br>
+<br>server.example.com:/home  /home  nfs     defaults        0 0
 <br>
 <br>   
 </div>
