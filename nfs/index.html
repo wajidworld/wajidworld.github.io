@@ -139,7 +139,6 @@ This example is based on the environment below.<b><p>
 <h5><span class="w3-code w3-black"> 
 [root@server ~]# vi /etc/idmapd.conf
 <br># line 5: uncomment and change to your domain name
-<br>
 <br>Domain = example.com          
 <br>
 <br>[root@server ~]# vi /etc/exports
@@ -149,11 +148,45 @@ This example is based on the environment below.<b><p>
 <br>[root@server ~]# systemctl start rpcbind nfs-server
 <br>
 <br>[root@server ~]# systemctl enable rpcbind nfs-server
+<br>  
+ <br># allow NFSv4
+<br>[root@dlp ~]# firewall-cmd --add-service=nfs --permanent
+<br>success
+<br>[root@dlp ~]# firewall-cmd --reload
+<br>success
 </span></h5>
+<br>
+<br>
+<br>   
+<p><b>Client Configuration:-<b><p>
 </div>
 </div>
 
+<h5><span class="w3-code w3-black">
+[root@Client~]# yum -y install nfs-utils
+<br>
+<br>[root@Client~]# vi /etc/idmapd.conf
+<br># line 5: uncomment and change to your domain name
+<br>Domain = srv.world
+<br>
+<br>[root@Client~]# systemctl start rpcbind
+<br>
+<br>[root@Client~]# systemctl enable rpcbind
+<br>
+<br>[root@Client~]# mount -t nfs Server.example.com:/home /home
+<br>
+<br>[root@Client~]# df -hT
+<br>Filesystem              Type      Size  Used Avail Use% Mounted on
+<br>Server.example.com:/home  nfs4       45G  1.4G   63G   5% /home
+<br># /home from NFS server is mounted
+<br>
+</span></h5>
 
+
+<p><b>Mount it on fstab so it remains after the system boots.<b><p>
+<h5><span class="w3-code w3-black">[root@Client ~]# vi /etc/fstab
+<br># add like follows to the end
+<br>server.example.com:/home  /home                   nfs     defaults        0 0
 
 <!-- Menu Container -->
 
