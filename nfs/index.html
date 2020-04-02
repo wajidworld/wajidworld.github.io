@@ -155,12 +155,7 @@ This example is based on the environment below.<b><p>
 <br>[root@dlp ~]# firewall-cmd --reload
 <br>success
 </span></h5>
-<br>
-<br>
-<br>   
 <p><b>Client Configuration:-<b><p>
-</div>
-</div>
 
 <h5><span class="w3-code w3-black">
 [root@Client~]# yum -y install nfs-utils
@@ -184,9 +179,18 @@ This example is based on the environment below.<b><p>
 
 
 <p><b>Mount it on fstab so it remains after the system boots.<b><p>
+<br>
+<br>
 <h5><span class="w3-code w3-black">[root@Client ~]# vi /etc/fstab
 <br># add like follows to the end
 <br>server.example.com:/home  /home                   nfs     defaults        0 0
+<br>
+<br>
+<br>   
+</div>
+</div>
+
+
 
 <!-- Menu Container -->
 
