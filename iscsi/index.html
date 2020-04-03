@@ -84,6 +84,7 @@ body, html {
       <a href="http://linuxhero.tk/linuxinfo/">Linux Introduction</a>
       <a href="http://linuxhero.tk/linuxdistros/">Linux Distributions</a>
        <a href="http://linuxhero.tk/nfs/">Configure NFS Server</a>
+       <a href="http://linuxhero.tk/iscsi/">Configure iSCSI Storage Server</a>
       
      </div>
     </div> 
@@ -126,7 +127,7 @@ body, html {
 
 
 <!-- Add a background color and large text to the whole page -->
-<div class="w3-sand w3-grayscale w3-large">
+<div class="w3-sand w3-greenscale w3-large">
      
 <!-- Content -->
 <div style="max-width:1200px">
@@ -238,7 +239,7 @@ Created LUN 1.
 <br>[root@client ~]# systemctl start iscsid iscsi  
 </span></h5>
 <p><b>Now we need to discover iSCSI targets then login<b><p> 
-        <h5><span class="w3-code w3-black"><br>[root@client ~]# iscsiadm --mode discovery --type sendtargets --portal 192.0.0.0
+ <h5><span class="w3-code w3-black">[root@client ~]# iscsiadm --mode discovery --type sendtargets --portal 192.0.0.0
 <br>192.0.0.0:3260,1 <br>iqn.2020-04.example.com
 <br>
 <br>[root@client ~]# iscsiadm -m node -T iqn.2020-04.example.com -l
@@ -259,7 +260,7 @@ Created LUN 1.
 <br>/dev/sdb        500M   11M  489M   4% /mnt
 </span></h5>
  <p><b>In order to log out of the iSCSI target, first unmount the disks then perform the actual log out<b><p>
-  <h5><span class="w3-code w3-black"> <br>[root@client /]# umount /mnt
+  <h5><span class="w3-code w3-black">[root@client /]# umount /mnt
     <br>
     <br>[root@client ~]# iscsiadm -m node -u
 <br>Logging out of session [sid: 1, target: iqn.2020-04.example.com:target, portal: 192.0.0.0,3260]
