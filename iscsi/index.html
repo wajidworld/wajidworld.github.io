@@ -245,6 +245,27 @@ Created LUN 1.
 <br>Logging in to [iface: default, target: iqn.2020-04.example.com, portal: 192.0.0.0,3260] (multiple)
 <br>Login to [iface: default, target: iqn.2020-04.example.com, portal: 192.0.0.0,3260] successful.
    </span></h5>
+  <p><b>we can view all active iSCSI sessions as shown below.<b><p>
+   <h5><span class="w3-code w3-black">[root@client]# iscsiadm -m session -P 0
+<br>tcp: [1] 192.0.0.0:3260,1 iqn.2020-04.example.com:target (non-flash)
+        </span></h5>
+    <p><b>format with XFS<b><p>
+      <h5><span class="w3-code w3-black">[root@client ~]# mkfs.xfs /dev/sdb
+        <br>
+        <br>[root@client ~]# mount /dev/sdb /mnt
+<br>
+<br>[root@client ~]# df -h | grep mnt
+<br>Filesystem      Size  Used Avail Use% Mounted on
+<br>/dev/sdb        500M   11M  489M   4% /mnt
+</span></h5>
+ <p><b>In order to log out of the iSCSI target, first unmount the disks then perform the actual log out<b><p>
+  <h5><span class="w3-code w3-black"> <br>[root@client /]# umount /mnt
+    <br>
+    <br>[root@client ~]# iscsiadm -m node -u
+<br>Logging out of session [sid: 1, target: iqn.2020-04.example.com:target, portal: 192.0.0.0,3260]
+<br>Logout of [sid: 1, target: iqn.2020-04.example.com:target, portal: 192.0.0.0,3260] successful.
+</span></h5>
+   
 <!-- Menu Container -->
 
 
