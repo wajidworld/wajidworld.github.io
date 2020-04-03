@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://linuxhero.tk/#home">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+      <a href="http://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+       <a href="http://linuxhero.tk/nfs/">Configure NFS Server</a>
+      
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+    <a href="http://linuxhero.tk/#Topics">New Topics</a>
+    <a href="http://linuxhero.tk/#about">About</a>
+    <a href="http://linuxhero.tk/#contact">Contact Us</a>
+  </div>
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-orange w3-scale w3-large">
+     <img src="programming.gif" alt="Computer man" style="width:100px;height:100px;">
+<!-- Content -->
+<div style="max-width:1200px">
+
+  <div class="w3-content" style="max-width:1000px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
+Configure Dnsmasq</span></h5>
+    <p><b>Install Dnsmasq which is the lightweight DNS forwarder and DHCP Server Software.<b><p>
+  <h5 <span class="w3-tag w3-black">	
+Install Dnsmasq which is the lightweight DNS forwarder and DHCP Server Software.</span></h5>
+  <p><b>Install Dnsmasq:-<b><p>
+<h5><span class="w3-code w3-black">[root@server ~]# yum -y install dnsmasq
+ </span></h5>
+ <p><b>Configure Dnsmasq.<b<p>
+ 
+ <h5><span class="w3-code w3-black"><br>|[root@server ~]# vi /etc/dnsmasq.conf
+<br># line 19: uncomment (never forward plain names)
+<br>domain-needed
+<br># line 21: uncomment (never forward addresses in the non-routed address spaces)
+<br>bogus-priv
+<br># line 41: uncomment (query with each server strictly in the order in resolv.conf)
+<br>strict-order
+<br># line 55: add if you need
+<br># query the specific domain name to the specific DNS server
+<br># the example follows means query [server.example] domain to the [10.0.0.0] server
+<br>server=/server.example./10.0.0.10
+<br># line 123: uncomment (add domain name automatically)
+<br>expand-hosts
+<br># line 133: add (define domain name)
+<br>domain=example.com
+<br>
+<br>|[root@server ~]# systemctl start dnsmasq
+<br>
+<br>|[root@server ~]# systemctl enable dnsmasq
+</span></h5>
+ 
+<p><b>For DNS records, add them in /etc/hosts.
+Then, Dnsmasq will answer to queries from clients.<b><p>
+<br>
+
+
+  <h5><span class="w3-code w3-black">[root@server ~]# vi /etc/hosts
+<br>127.0.0.1   localhost localhost.localdomain localhost4 localhost4.localdomain4
+<br>::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
+<br># add records
+<br>10.0.0.30   server.example.com 
+<br>[root@server ~]# systemctl restart dnsmasq
+    </span></h5>
+  <p><b>If Firewalld is running, allow DNS service.<b><p>
+    
+<h5><span class="w3-code w3-black">
+  [root@server ~]# firewall-cmd --add-service=dns --permanent
+<br>success
+<br>[root@server ~]# firewall-cmd --reload
+<br>success
+ </span></h5> 
+<p><b>Verify to resolve Name or IP address from a client in internal network.<b><p>
+
+   <h5><span class="w3-code w3-black"><br>[root@client ~]# yum -y install bind-utils
+<br># change DNS setting to Dnsmasq Server (replace "ens3" to your own environment)
+<br>
+<br>[root@client ~]# nmcli c modify ens3 ipv4.dns 10.0.0.30
+<br>[root@client ~]# nmcli c down ens3; nmcli c up ens3
+<br>
+<br>[root@client ~]# dig server.example.com.
+<br>
+[root@desktop ~]# dig -x 10.0.0.30
+</span></h5> 
+<!-- Menu Container -->
+
+
+<!-- Contact/Area Container -->
+
+<div class="w3-container" id="contact">
+    <h2>Please email me if you face any issue.</h2>
+    <form action="mailto:Mdsulemanroayl23@gmail.com" method="get" enctype="text/plain">
+      <p><strong>Name: <input type="text" name="name"/></p>
+      <p><strong>Email: <input type="text" name="email"/></p>
+      <p><strong>Comments:
+        <br />
+        <textarea name="comments" rows = "12" cols = "35">Send your comments to owner.</textarea>
+        <br>
+      <p><input type="submit" name="submit" value="Send" />
+        <form action="mailto:allishah2490@gmail.com" 
+         enctype="text/plain" onsubmit="location.href='thanks.html';" >
+        <input type="reset" name="reset" value="Clear Form" />
+      </p>
+    </form>
+  </body>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
