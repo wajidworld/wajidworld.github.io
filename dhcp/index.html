@@ -64,7 +64,7 @@ body, html {
 }
 
 .dropdown-content a:hover {
-  background-color: #ddd;
+  background-color: #808080;
 }
 
 .dropdown:hover .dropdown-content {
@@ -140,14 +140,12 @@ body, html {
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
 Configure Dnsmasq</span></h5>
     <p><b>Install Dnsmasq which is the lightweight DNS forwarder and DHCP Server Software.<b><p>
-  <h5 <span class="w3-tag w3-black">	
-Install Dnsmasq which is the lightweight DNS forwarder and DHCP Server Software.</span></h5>
   <p><b>Install Dnsmasq:-<b><p>
 <h5><span class="w3-code w3-black">[root@server ~]# yum -y install dnsmasq
  </span></h5>
- <p><b>Configure Dnsmasq.<b<p>
+ <p><b>Configure Dnsmasq:-<b<p>
  
- <h5><span class="w3-code w3-black"><br>|[root@server ~]# vi /etc/dnsmasq.conf
+ <h5><span class="w3-code w3-black">[root@server ~]# vi /etc/dnsmasq.conf
 <br># line 19: uncomment (never forward plain names)
 <br>domain-needed
 <br># line 21: uncomment (never forward addresses in the non-routed address spaces)
@@ -178,7 +176,8 @@ Then, Dnsmasq will answer to queries from clients.<b><p>
 <br>::1         localhost localhost.localdomain localhost6 localhost6.localdomain6
 <br># add records
 <br>10.0.0.30   server.example.com 
-<br>[root@server ~]# systemctl restart dnsmasq
+<br>
+ <br>[root@server ~]# systemctl restart dnsmasq
     </span></h5>
   <p><b>If Firewalld is running, allow DNS service.<b><p>
     
@@ -190,7 +189,7 @@ Then, Dnsmasq will answer to queries from clients.<b><p>
  </span></h5> 
 <p><b>Verify to resolve Name or IP address from a client in internal network.<b><p>
 
-   <h5><span class="w3-code w3-black"><br>[root@client ~]# yum -y install bind-utils
+   <h5><span class="w3-code w3-black">[root@client ~]# yum -y install bind-utils
 <br># change DNS setting to Dnsmasq Server (replace "ens3" to your own environment)
 <br>
 <br>[root@client ~]# nmcli c modify ens3 ipv4.dns 10.0.0.30
