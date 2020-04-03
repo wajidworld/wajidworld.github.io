@@ -127,19 +127,19 @@ body, html {
 
 
 <!-- Add a background color and large text to the whole page -->
-<div class="w3-sand w3-scale w3-large">
+<div class="w3-sand w3-indianredscale w3-large">
      
 <!-- Content -->
 <div style="max-width:1200px">
 
   <div class="w3-content" style="max-width:1000px">
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
-Configure NTP Server (Targetcli)</span></h5>
+Configure NTP Server</span></h5>
     <p><b>	
 Install NTPd and Configure NTP server for time adjustment.<b><p>
   <h5 <span class="w3-tag w3-red">[NTPd Server] |192.0.0.20 ---------------- 192.0.0.30|  [NTPd Client] <br>Server.example.com  <--------------------->  Client.example.com</span></h5>
   <p><b>Server Configuration:-<b><p>
-<h5><span class="w3-code w3-black"> <br>[root@<br>server ~]# yum -y install ntp
+<h5><span class="w3-code w3-black">[root@<br>server ~]# yum -y install ntp
 <br>[root@<br>server ~]# vi /etc/ntp.conf
 <br>restrict default kod nomodify notrap nopeer noquery
 <br>restrict -6 default kod nomodify notrap nopeer noquery
@@ -163,8 +163,7 @@ Install NTPd and Configure NTP server for time adjustment.<b><p>
 <br>success
 </span></h5>
 <p><b>To Verify<b<p>
-<h5><span class="w3-code w3-black">
-<br>[root@dlp ~]# ntpq -p
+<h5><span class="w3-code w3-black">[root@dlp ~]# ntpq -p
 </span></h5>
  
 <p><b>NTP Client Configuration:-<b><p>
