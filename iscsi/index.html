@@ -158,7 +158,7 @@ Configure iSCSI Target (Targetcli)</span></h5>
  <p><b>Creating a Backstore<b<p>
  
  <h5><span class="w3-code w3-black">/> backstores/fileio create filetest /tmp/fileio 500M write_back=false
-<br>Created fileio testfile with size 524288000
+<br>Created fileio filetest with size 524288000
 <br>/> backstores/block create name=block dev=/dev/sdb  
 <br>Created block storage object block using /dev/sdb.
 </span></h5>
@@ -170,7 +170,7 @@ Configure iSCSI Target (Targetcli)</span></h5>
   <br>| o- block ............................... [Storage Objects: 1]
   <br>| | o- block ....... [/dev/sdc (1.0GiB) write-thru deactivated]
   <br>| o- fileio .............................. [Storage Objects: 1]
-  <br>| | o- testfile .. [/tmp/filetest (500.0MiB) write-thru deactivated]
+  <br>| | o- filetest .. [/tmp/filetest (500.0MiB) write-thru deactivated]
   <br>| o- pscsi ............................... [Storage Objects: 0]
   <br>| o- ramdisk ............................. [Storage Objects: 0]
   <br>o- iscsi ......................................... [Targets: 0]
@@ -197,7 +197,7 @@ Configure iSCSI Target (Targetcli)</span></h5>
     <br>
     <br>
     <br>/iscsi> iqn.2020-04.example.com:taget/tpg1/
-    <br>/iscsi/iqn.20...m:target/tpg1> luns/ create /backstores/fileio/testfile
+    <br>/iscsi/iqn.20...m:target/tpg1> luns/ create /backstores/fileio/filetest
 Created LUN 0.
 <br>
 <br>/iscsi/iqn.20...m:target/tpg1> luns/ create /backstores/block/block
