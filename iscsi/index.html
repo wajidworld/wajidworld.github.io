@@ -141,7 +141,6 @@ Configure iSCSI Target (Targetcli)</span></h5>
 <br>[root@server ~]# systemctl start target
 <br>[root@server ~]# systemctl enable target
 <br>
-<br>
 </span></h5>
 <p><b>Now we can run the targetcli command.<b<p>
 <h5><span class="w3-code w3-black">[root@server ~]# targetcli
@@ -233,6 +232,19 @@ Created LUN 1.
 <br>[root@server ~]# firewall-cmd --reload
 <br>success
      </span></h5>
+ <p><b>Configure iSCSI Initiator:-<b><p>
+   <h5><span class="w3-code w3-black">[root@client ~]# yum install iscsi-initiator-utils -y
+     <br>[root@client ~]# systemctl enable iscsid iscsi
+<br>[root@client ~]# systemctl start iscsid iscsi  
+</span></h5>
+<p><b>Now we need to discover iSCSI targets then login<b><p> 
+        <h5><span class="w3-code w3-black"><br>[root@client ~]# iscsiadm --mode discovery --type sendtargets --portal 192.0.0.0
+<br>192.0.0.0:3260,1 <br>iqn.2020-04.example.com
+<br>
+<br>[root@client ~]# iscsiadm -m node -T iqn.2020-04.example.com -l
+<br>Logging in to [iface: default, target: iqn.2020-04.example.com, portal: 192.0.0.0,3260] (multiple)
+<br>Login to [iface: default, target: iqn.2020-04.example.com, portal: 192.0.0.0,3260] successful.
+   </span></h5>
 <!-- Menu Container -->
 
 
