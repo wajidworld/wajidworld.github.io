@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #808080;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://linuxhero.tk/#home">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+       <a href="http://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+       <a href="http://linuxhero.tk/linuxcommands/">Linux Commands</a>
+       <a href="http://linuxhero.tk/ntp/">Configure NTP</a>
+       <a href="http://linuxhero.tk/ssh/">Configure SSH</a>
+       <a href="http://linuxhero.tk/nfs/">Configure NFS</a>
+       <a href="http://linuxhero.tk/iscsi/">Configure iSCSI Storage</a>  
+        <a href="http://linuxhero.tk/dhcp/">Configure Dnsmasq</a>
+         <a href="http://linuxhero.tk/ftp/">Configure FTP Server</a>
+      
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+    <a href="http://linuxhero.tk/#Topics">New Topics</a>
+    <a href="http://linuxhero.tk/#about">About</a>
+    <a href="http://linuxhero.tk/#contact">Contact</a>
+  </div>
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-orange w3-scale w3-large">
+     <img src="/programming.gif" alt="Computer man" style="width:100px;height:100px;">
+<!-- Content -->
+<div style="max-width:1200px">
+
+  <div class="w3-content" style="max-width:1000px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
+FTP SERVER</span></h5>
+  <p><b>vsftpd (Very Secure File Transport Protocol Daemon) is a secure, fast FTP server for Unix/Linux systems.<b><p>
+  <p><b>Install vsftpd:- <b><p>
+<h5><span class="w3-code w3-black">[root@server ~]# yum install vsftpd ftp -y
+ </span></h5>
+ <p><b>Configure vsftpd<b><p>
+ <p>Edit vsftpd configuration file /etc/vsftpd/vsftpd.conf<p>
+ <h5><span class="w3-code w3-black">[root@server ~]# vi /etc/vsftpd/vsftpd.conf
+<br>## Disable anonymous login ##
+<br>anonymous_enable=NO
+<br>
+<br>## Uncomment ##
+<br>ascii_upload_enable=YES
+<br>ascii_download_enable=YES
+<br>
+<br>## Add at the end of this  file ##
+<>bruse_localtime=YES
+</span></h5>
+<br>
+
+<p><b>Enable and start the vsftpd service<b><p>
+ <h5><span class="w3-code w3-black">[root@server ~]# systemctl enable vsftpd
+<br>[root@server ~]# systemctl start vsftpd
+    </span></h5>
+  <p><b>Allow the ftp service and port 21 via firewall<b><p>
+    
+<h5><span class="w3-code w3-black">
+  [root@server ~]# firewall-cmd --permanent --add-port=21/tcp
+<br>success
+<br>[root@server ~]# firewall-cmd --permanent --add-service=ftp
+<br>success
+<br>[root@server ~]# firewall-cm --reload
+
+ </span></h5> 
+<p><b>update the SELinux boolean values for FTP service<b><p>
+
+   <h5><span class="w3-code w3-black">[root@server ~]# setsebool -P ftp_home_dir on
+</span></h5> 
+<!-- Menu Container -->
+<p><b>Create FTP users<b><p>
+By default, root user is not allowed to login to ftp server for security purpose. So,  Create a normal user<b><p>
+<h5><span class="w3-code w3-black"> [root@server ~]# useradd sam
+<br>[root@server ~]# passwd sam
+<br>
+<p><b>Client side configuration:-<b><p>
+<p>Try to log in to the FTP server with user sam<p>
+<h5><span class="w3-code w3-black">[root@client ~]# ftp 192.0.0.20
+</span></h5> 
+
+<!-- Contact/Area Container -->
+
+<div class="w3-container" id="contact">
+    <h2>Please email me if you face any issue.</h2>
+    <form action="mailto:Mdsulemanroayl23@gmail.com" method="get" enctype="text/plain">
+      <p><strong>Name: <input type="text" name="name"/></p>
+      <p><strong>Email: <input type="text" name="email"/></p>
+      <p><strong>Comments:
+        <br />
+        <textarea name="comments" rows = "12" cols = "35">Send your comments to owner.</textarea>
+        <br>
+      <p><input type="submit" name="submit" value="Send" />
+        <form action="mailto:allishah2490@gmail.com" 
+         enctype="text/plain" onsubmit="location.href='thanks.html';" >
+        <input type="reset" name="reset" value="Clear Form" />
+      </p>
+    </form>
+  </body>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
