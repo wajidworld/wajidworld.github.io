@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #808080;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://linuxhero.tk/#home">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="https://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+       <a href="https://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+       <a href="https://linuxhero.tk/linuxcommands/">Linux Commands</a>
+       <a href="https://linuxhero.tk/ntp/">Configure NTP</a>
+       <a href="https://linuxhero.tk/ssh/">Configure SSH</a>
+       <a href="https://linuxhero.tk/nfs/">Configure NFS</a>
+       <a href="https://linuxhero.tk/iscsi/">Configure iSCSI Storage</a>  
+       <a href="https://linuxhero.tk/dhcp/">Configure Dnsmasq</a>
+       <a href="https://linuxhero.tk/ftp/">Configure FTP Server</a>
+      
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="https://linuxhero.tk/Analyzebottlenecks/">Steps To Analyze Linux Performance Bottlenecks</a>
+      <a href="https://linuxhero.tk/cpubottlenecks/">CPU Bottlenecks</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+     <a href="https://linuxhero.tk/Analyzebottlenecks/">Steps To Analyze Linux Performance Bottlenecks</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+    <a href="http://linuxhero.tk/#Topics">New Topics</a>
+    <a href="http://linuxhero.tk/#about">About</a>
+    <a href="http://linuxhero.tk/#contact">Contact</a>
+  </div>
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-orange w3-scale w3-large">
+     <img src="/programming.gif" alt="Computer man" style="width:100px;height:100px;">
+<!-- Content -->
+<div style="max-width:1200px">
+
+  <div class="w3-content" style="max-width:1000px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
+CPU Bottlenecks</span></h5>
+ <br>
+  <p>For servers whose primary role is that of an application or database server, the CPU is a critical resource and can often be a source of performance bottlenecks. It is important to note that high CPU utilization does not always mean that a CPU is busy doing work; it might be waiting on another subsystem. When performing proper analysis, it is very important that you look at the system as a whole and at all subsystems because there could be a cascade effect within the subsystems.<p>
+ <br>
+ <p>Note: There is a common misconception that the CPU is the most important part of the server. This is not always the case, and servers are often overconfigured with CPU and underconfigured with disks, memory, and network subsystems. Only specific applications that are truly CPU intensive can take advantage of today’s high-end processors.<p>
+<h5><span class="w3-code w3-black">Finding CPU bottlenecks
+ </span></h5>
+ <p>Linux has a variety of tools to help determine this. The question is which tools to use.
+One tool is uptime. By analyzing the output from uptime, we can get a rough idea of what has been happening in the system for the past 15 minutes.<p>
+<br>
+<p>Tip: Be careful not to add to CPU problems by running too many tools at one time. You might find that using a lot of different monitoring tools at one time could be contributing to the high CPU load.<p>
+ <br>
+ <p>Using top, you can see the CPU utilization and what processes are the biggest contributors to the problem. If you have set up sar, you are collecting a lot of information, some of which is CPU utilization, over a period of time. Analyzing this information can be difficult, so use isag, which can use sar output to plot a graph. Otherwise, you may wish to parse the information through a script and use a spreadsheet to plot it to see any trends in CPU utilization. You can also use sar from the command line by issuing sar -u or sar -U processornumber. To gain a broader perspective of the system and current utilization of more than just the CPU subsystem, a good tool is vmstat<p>
+ 
+ <h5><span class="w3-code w3-black">SMP
+</span></h5>
+<br>
+
+<p>SMP-based systems can present their own set of interesting problems that can be difficult to detect. In an SMP environment, there is the concept of CPU affinity, which implies that you bind a process to a CPU.<p>
+<br>
+<p>The main reason this is useful is because of CPU cache optimization, which is achieved by keeping the same process on one CPU rather than moving between processors. When a process moves between CPUs, the cache of the new CPU must be flushed. Therefore, a process that moves between processors causes many cache flushes to occur, which means that an individual process will take longer to finish. This scenario is very hard to detect because, when monitoring it, the CPU load will appear to be very balanced and not necessarily peaking on any CPU.<p>
+<h5><span class="w3-code w3-black">Performance tuning options:-
+    </span></h5>
+ <br>
+    
+<h5><span class="w3-code w3-black">
+  Tuning process priority:
+</span></h5> 
+<p>it is not possible to change
+the process priority of a process. This is only indirectly possible through the use of the nice
+level of the process, but even this is not always possible. If a process is running too slowly,
+you can assign more CPU to it by giving it a lower nice level. Of course, this means that all
+other programs will have fewer processor cycles and will run more slowly.<p>
+<br>
+<p>Linux supports nice levels from 19 (lowest priority) to -20 (highest priority). The default value
+is 0. To change the nice level of a program to a negative number (which makes it higher
+priority), it is necessary to log on or su to root.<p>
+<p><br>To start the program xyz with a nice level of -5, issue the command:
+<br>nice -n -5 xyz
+<br>
+<br>To change the nice level of a program already running, issue the command:
+<br>renice level pid
+<br>
+<br>To change the priority of a program with a PID of 2500 to a nice level of 10, issue:
+<br>renice 10 2500<p>
+
+   <h5><span class="w3-code w3-black">CPU affinity for interrupt handling:-
+</span></h5> 
+<!-- Menu Container -->
+<p>1. Bind processes that cause a significant amount of interrupts to a CPU.<p>
+<br>
+<p>CPU affinity enables the system administrator to bind interrupts to a group or a single
+physical processor (of course, this does not apply on a single CPU system). To change the
+affinity of any given IRQ, go into /proc/irq/%{number of respective irq}/ and change
+the CPU mask stored in the file smp_affinity. To set the affinity of IRQ 19 to the third CPU
+in a system (without SMT) use the command as per below<p>
+<br>
+<h5><span class="w3-code w3-black">#Setting the CPU affinity for interrupts
+<br>[root@server]#echo 03 > /proc/irq/19/smp_affinity</span></h5> 
+
+<p>2. Let physical processors handle interrupts.<p>
+<br>
+<p>In symmetric multi-threading (SMT) systems such as IBM POWER 5+ processors
+supporting multi-threading, it is suggested that you bind interrupt handling to the physical
+processor rather than the SMT instance. The physical processors usually have the lower
+CPU numbering so in a two-way system with multi-threading enabled, CPU ID 0 and 2
+would refer to the physical CPU, and 1 and 3 would refer to the multi-threading instances.
+If you do not use the smp_affinity flag, you will not have to worry about this.<p>
+
+
+
+<!-- Contact/Area Container -->
+
+<div class="w3-container" id="contact">
+    <h2>Please email me if you face any issue.</h2>
+    <form action="mailto:Allishah2490@gmail.com" method="get" enctype="text/plain">
+      <p><strong>Name: <input type="text" name="name"/></p>
+      <p><strong>Email: <input type="text" name="email"/></p>
+      <p><strong>Comments:
+        <br />
+        <textarea name="comments" rows = "12" cols = "35">Send your comments to owner.</textarea>
+        <br>
+      <p><input type="submit" name="submit" value="Send" />
+        <form action="mailto:allishah2490@gmail.com" 
+         enctype="text/plain" onsubmit="location.href='thanks.html';" >
+        <input type="reset" name="reset" value="Clear Form" />
+      </p>
+    </form>
+  </body>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
