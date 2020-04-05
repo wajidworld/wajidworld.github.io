@@ -144,13 +144,17 @@ CPU Bottlenecks</span></h5>
  <br>
   <p>For servers whose primary role is that of an application or database server, the CPU is a critical resource and can often be a source of performance bottlenecks. It is important to note that high CPU utilization does not always mean that a CPU is busy doing work; it might be waiting on another subsystem. When performing proper analysis, it is very important that you look at the system as a whole and at all subsystems because there could be a cascade effect within the subsystems.<p>
  <br>
- <p>Note: There is a common misconception that the CPU is the most important part of the server. This is not always the case, and servers are often overconfigured with CPU and underconfigured with disks, memory, and network subsystems. Only specific applications that are truly CPU intensive can take advantage of today’s high-end processors.<p>
-<h5><span class="w3-code w3-black">Finding CPU bottlenecks
+<h5><span class="w3-code w3-red">Note: There is a common misconception that the CPU is the most important part of the server. This is not always the case, and servers are often overconfigured with CPU and underconfigured with disks, memory, and network subsystems. Only specific applications that are truly CPU intensive can take advantage of today’s high-end processors.</span></h5>
+<br>
+<h5><span class="w3-code w3-red">Finding CPU bottlenecks
  </span></h5>
  <p>Linux has a variety of tools to help determine this. The question is which tools to use.
 One tool is uptime. By analyzing the output from uptime, we can get a rough idea of what has been happening in the system for the past 15 minutes.<p>
+
+<h5><span class="w3-code w3-black">#uptime</span></h5>
+
 <br>
-<p>Tip: Be careful not to add to CPU problems by running too many tools at one time. You might find that using a lot of different monitoring tools at one time could be contributing to the high CPU load.<p>
+<h5><span class="w3-code w3-red">Tip: Be careful not to add to CPU problems by running too many tools at one time. You might find that using a lot of different monitoring tools at one time could be contributing to the high CPU load.</span></h5>
  <br>
  <p>Using top, you can see the CPU utilization and what processes are the biggest contributors to the problem. If you have set up sar, you are collecting a lot of information, some of which is CPU utilization, over a period of time. Analyzing this information can be difficult, so use isag, which can use sar output to plot a graph. Otherwise, you may wish to parse the information through a script and use a spreadsheet to plot it to see any trends in CPU utilization. You can also use sar from the command line by issuing sar -u or sar -U processornumber. To gain a broader perspective of the system and current utilization of more than just the CPU subsystem, a good tool is vmstat<p>
  
@@ -161,14 +165,14 @@ One tool is uptime. By analyzing the output from uptime, we can get a rough idea
 <p>SMP-based systems can present their own set of interesting problems that can be difficult to detect. In an SMP environment, there is the concept of CPU affinity, which implies that you bind a process to a CPU.<p>
 <br>
 <p>The main reason this is useful is because of CPU cache optimization, which is achieved by keeping the same process on one CPU rather than moving between processors. When a process moves between CPUs, the cache of the new CPU must be flushed. Therefore, a process that moves between processors causes many cache flushes to occur, which means that an individual process will take longer to finish. This scenario is very hard to detect because, when monitoring it, the CPU load will appear to be very balanced and not necessarily peaking on any CPU.<p>
-<h5><span class="w3-code w3-black">Performance tuning options:-
+<h5><span class="w3-code w3-red">Performance tuning options:-
     </span></h5>
  <br>
     
-<h5><span class="w3-code w3-black">
+<h5><span class="w3-code w3-red">
   Tuning process priority:
 </span></h5> 
-<p>it is not possible to change
+<p>It is not possible to change
 the process priority of a process. This is only indirectly possible through the use of the nice
 level of the process, but even this is not always possible. If a process is running too slowly,
 you can assign more CPU to it by giving it a lower nice level. Of course, this means that all
@@ -178,19 +182,18 @@ other programs will have fewer processor cycles and will run more slowly.<p>
 is 0. To change the nice level of a program to a negative number (which makes it higher
 priority), it is necessary to log on or su to root.<p>
 <p><br>To start the program xyz with a nice level of -5, issue the command:
-<br>nice -n -5 xyz
+<h5><span class="w3-code w3-black">[root@server ~]# nice -n -5 xyz</span></h5> 
 <br>
 <br>To change the nice level of a program already running, issue the command:
-<br>renice level pid
+<h5><span class="w3-code w3-black">[root@server ~]# renice level pid</span></h5> 
 <br>
 <br>To change the priority of a program with a PID of 2500 to a nice level of 10, issue:
-<br>renice 10 2500<p>
+<h5><span class="w3-code w3-black">[root@server ~]# renice 10 2500</span></h5> 
 
    <h5><span class="w3-code w3-black">CPU affinity for interrupt handling:-
 </span></h5> 
 <!-- Menu Container -->
 <p>1. Bind processes that cause a significant amount of interrupts to a CPU.<p>
-<br>
 <p>CPU affinity enables the system administrator to bind interrupts to a group or a single
 physical processor (of course, this does not apply on a single CPU system). To change the
 affinity of any given IRQ, go into /proc/irq/%{number of respective irq}/ and change
@@ -201,7 +204,6 @@ in a system (without SMT) use the command as per below<p>
 <br>[root@server]#echo 03 > /proc/irq/19/smp_affinity</span></h5> 
 
 <p>2. Let physical processors handle interrupts.<p>
-<br>
 <p>In symmetric multi-threading (SMT) systems such as IBM POWER 5+ processors
 supporting multi-threading, it is suggested that you bind interrupt handling to the physical
 processor rather than the SMT instance. The physical processors usually have the lower
@@ -209,6 +211,32 @@ CPU numbering so in a two-way system with multi-threading enabled, CPU ID 0 and 
 would refer to the physical CPU, and 1 and 3 would refer to the multi-threading instances.
 If you do not use the smp_affinity flag, you will not have to worry about this.<p>
 
+<h5><span class="w3-code w3-red">How to test all above tips at home for cpu high utilization.</span></h5>
+
+<h5><span class="w3-code w3-red">"stress" tool</span></h5>
+<p><b>It is a workload generator tool designed to subject your system to a configurable measure of CPU, memory, I/O and disk stress.<b><p>
+<br>
+<h5><span class="w3-code w3-red">DO NOT TRY THIS TOOL IN PRODUCTION.</span></h5>
+<br>
+<p><b>Install stress tool:-<b><p>
+<h5><span class="w3-code w3-black">#Install epel-release first if not installed
+<br>[root@server ~]#  yum install epel-release
+<br>[root@server ~]# yum install stress</span></h5>
+<br>
+<br># To check options on how to use
+<h5><span class="w3-code w3-black">[root@server ~]# stress --help</span></h5>
+
+<p><b>Lets Try:--<b><p>
+<h5><span class="w3-code w3-black">
+#check load before running
+<br>[root@server ~]# uptime
+<br>#putting CPU load on server
+<br>[root@server ~]# sudo stress --cpu 9 --timeout 25
+<br>#After runnings stress command check load
+<br>[root@server ~]# uptime
+<br>
+</span></h5>
+<h5><span class="w3-code w3-black">Now try above tuning option to reduce some load.</span></h5>
 
 
 <!-- Contact/Area Container -->
