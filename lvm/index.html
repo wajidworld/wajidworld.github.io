@@ -141,10 +141,10 @@ body, html {
   <div class="w3-content" style="max-width:1000px">
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
 Configure LVM on Centos7</span></h5>
-  <p><b>Manage Phisical Volumes<b><p>
-  <p><b>	
-This is the basic operation of managing Phisical Volumes.<b><p>
-  <p><b>Create Phisical Volume <b><p>
+  <p>Manage physical Volumes:<p>
+  <p>	
+This is the basic operation of managing physical  Volumes.<p>
+  <p><b>Create physical  Volume:-<b><p>
 <h5><span class="w3-code w3-black">[root@server ~]# yum install vsftpd ftp -y
  </span></h5>
  <p>Configure vsftpd<p>
@@ -157,12 +157,12 @@ This is the basic operation of managing Phisical Volumes.<b><p>
 </span></h5>
 <br>
 
-<p><b>Display Phisical Volumes<b><p>
- <h5><span class="w3-code w3-black"><br># To display physical volumes
+<p><b>Display physical  Volumes<b><p>
+ <h5><span class="w3-code w3-black"># To display physical volumes
 <br>[root@server ~]# pvdisplay /dev/sdb1
 </span></h5>
 
-<p><b>Change size of Phisical Volume<b><p>
+<p><b>Change size of physical  Volume<b><p>
     
 <h5><span class="w3-code w3-black">
   # change to 40G
@@ -173,16 +173,16 @@ This is the basic operation of managing Phisical Volumes.<b><p>
 <br>[root@server ~]# pvdisplay /dev/sdb1
 </span></h5> 
 <br>
-<p><b>Display reports of Phisical Volumes.<b><p>
+<p><b>Display reports of physical  Volumes.<b><p>
 
    <h5><span class="w3-code w3-black">[root@server ~]# pvs /dev/sdb1
 </span></h5> 
 <br>
-<p><b>To Scan Phisical Volumes.<b><>
+<p><b>To Scan physical  Volumes.<b><p>
  <h5><span class="w3-code w3-black">[root@server ~]#  pvscan
 </span></h5> 
 <br>
-<p><b>To 	Delete Phisical Volume<b><p>
+<p><b>To 	Delete physical  Volume<b><p>
 
  <h5><span class="w3-code w3-black">[root@server ~]#  pvremove /dev/sdb1
  <br>Labels on physical volume "/dev/sdb1" successfully wiped
@@ -191,16 +191,7 @@ This is the basic operation of managing Phisical Volumes.<b><p>
 </span></h5> 
 
 
-<!-- Menu Container -->
-<p><b>Create FTP users<b><p>
-By default, root user is not allowed to login to ftp server for security purpose. So,  Create a normal user<b><p>
-<h5><span class="w3-code w3-black"> [root@server ~]# useradd sam
-<br>[root@server ~]# passwd sam
-<br>
-<p><b>Client side configuration:-<b><p>
-<p>Try to log in to the FTP server with user sam<p>
-<h5><span class="w3-code w3-black">[root@client ~]# ftp 192.0.0.20
-</span></h5> 
+<!-- Menu Container --
 
 <!-- Contact/Area Container -->
 
