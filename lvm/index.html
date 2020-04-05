@@ -145,9 +145,7 @@ Configure LVM on Centos7</span></h5>
   <p>	
 This is the basic operation of managing physical  Volumes.<p>
   <p><b>Create physical  Volume:-<b><p>
-<h5><span class="w3-code w3-black">[root@server ~]# yum install vsftpd ftp -y
- </span></h5>
- <p>Configure vsftpd<p>
+
  <h5><span class="w3-code w3-black">[root@server ~]# pvcreate /dev/sdb1
 <br>  Physical volume "/dev/sdb1" successfully created
 <br># specify like follows if you'd like to specify volume size
@@ -190,7 +188,47 @@ This is the basic operation of managing physical  Volumes.<p>
  <br> Failed to find physical volume "/dev/sdb1".
 </span></h5> 
 
+ <p><b>Manage Volumes Grouops:<b><p>
+  <p>	
+This is the basic operation of managing physical  Volumes.<p>
+  <p><b>Create Volume Group from PV /dev/sdb1:-<b><p>
+<h5><span class="w3-code w3-black">[root@server ~]# vgcreate vg_svr /dev/sdb1
+ </span></h5>
+<br>
+ 
+<p><b>Display  Volumes Groups<b><p>
+<h5><span class="w3-code w3-black">
+[root@server ~]# vgdisplay vg_svr
+</span></h5>
 
+<p><b>Change Volume Group's name<b><p>
+    
+<h5><span class="w3-code w3-black">
+
+<br>[root@server ~]# vgrename vg_dlp vg_example
+<br>Volume group "vg_srv" successfully renamed to "vg_example" vgdisplay
+  
+<br>
+<br>[root@server ~]# vgdisplay vg_example
+</span></h5> 
+<br>
+<p><b>Display reports of Volume Groups<b><p>
+
+   <h5><span class="w3-code w3-black">[root@server ~]# vgs
+</span></h5> 
+<br>
+<p><b>To Scan Volume Groups<b><p>
+ <h5><span class="w3-code w3-black">[root@server ~]#  vgscan
+</span></h5> 
+<br>
+<p><b>To Delete Volume Group<b><p>
+
+ <h5><span class="w3-code w3-black"># disable target volume group first and delete it
+<br>[root@server ~]#  vgchange -a n vg_example
+ <br>0 logical volume(s) in volume group "vg_example" now active
+ <br>[root@server ~]# vgremove vg_example
+ <br> Volume group "vg_example" successfully removed
+</span></h5> 
 <!-- Menu Container --
 
 <!-- Contact/Area Container -->
