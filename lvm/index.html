@@ -227,6 +227,64 @@ This is the basic operation of managing physical  Volumes.<p>
  <br>[root@server ~]# vgremove vg_example
  <br> Volume group "vg_example" successfully removed
 </span></h5> 
+  
+  <p><b>Manage Logical Volumes:<b><p>
+  <p>	
+This is the basic operation of managing Logical Volumes.<p>
+  <p><b>Create Logical Volume from VG vg_example:-<b><p>
+<h5><span class="w3-code w3-black">[root@server ~]# lvcreate -L 50G -n lv_data vg_srv
+ </span></h5>
+<br>
+ 
+<p><b>Display  Logical Volumes.<b><p>
+<h5><span class="w3-code w3-black">
+[root@server ~]# lvdisplay /dev/vg_srv/lv_data
+</span></h5>
+
+<p><b>Rename Logical Volume<b><p>
+    
+<h5><span class="w3-code w3-black">[root@server ~]# lvrename vg_srv lv_data lv_example
+<br>Renamed "lv_data" to "lv_example" in volume group "vg_srv"
+  
+<br>
+<br>[root@server ~]# lvdisplay /dev/vg_srv/lv_example
+</span></h5> 
+<br>
+<p><b>Display reports of Logical Volumes<b><p>
+
+   <h5><span class="w3-code w3-black">[root@server ~]# lvs
+</span></h5> 
+<br>
+<p><b>To Scan Logical Volumes<b><p>
+ <h5><span class="w3-code w3-black">[root@server ~]#  lvscan
+<br>[root@server ~]# lvdisplay
+</span></h5> 
+<br>
+
+<p><b>Extend Logical Volume.<b><p>
+ <h5><span class="w3-code w3-black">[root@server ~]# lvextend -L 60G /dev/vg_srv/lv_example
+<br>#for the case of extending ext4 filesystem
+<br>[root@server ~]# lvdisplay /dev/vg_srv/lv_example 
+<br> [root@server ~]# resize2fs 
+</span></h5>
+<p><b>Reduce Logical Volume.<b><p>
+<h5><span class="w3-code w3-black">
+#Unmount target device first.
+<br># for ext4, check it first
+<br>[root@server ~]# e2fsck -f /dev/vg_srv/lv_example 20G 
+<br>[root@server ~]# resize2fs /dev/vg_srv/lv_example 20G
+<br>#reduce logical volmue at last
+<br>[root@server ~]# lvreduce -L 20G /dev/vg_srv/lv_example 
+</span></h5>
+
+<p><b>To Delete Logical Volume. first unmount then stop logical volume then delete logical volume<b><p>
+
+ <h5><span class="w3-code w3-black"># disable target volume group first and delete it
+<br>[root@server ~]#  lvchange -an /dev/vg_srv/lv_example
+ <br>0 logical volume(s) in volume group "vg_example" now active
+ <br>[root@server ~]# lvremove /dev/vg_srv/lv_example
+ <br> Logical volume "lv_example" successfully removed
+</span></h5> 
 <!-- Menu Container --
 
 <!-- Contact/Area Container -->
