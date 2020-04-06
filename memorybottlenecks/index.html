@@ -125,9 +125,9 @@ body, html {
       <a href="#">Link 3</a>
     </div>
   </div>
-    <a href="http://linuxhero.tk/#Topics">New Topics</a>
-    <a href="http://linuxhero.tk/#about">About</a>
-    <a href="http://linuxhero.tk/#contact">Contact</a>
+    <a href="https://linuxhero.tk/#Topics">New Topics</a>
+    <a href="https://linuxhero.tk/#about">About</a>
+    <a href="https://linuxhero.tk/#contact">Contact</a>
   </div>
 
 <!-------------Top Menu End------------->
@@ -148,34 +148,26 @@ Memory Bottlenecks</span></h5>
 <p>The OS uses an algorithm to control which programs will use physical memory and which are paged out. This is transparent to user programs. Page space is a file created by the OS on a disk partition to store user programs that are not currently in use. Typically, page sizes are 4 KB or 8 KB. In Linux, the page size is defined by using the variable EXEC_PAGESIZE in the include/asm-<architecture>/param.h kernel header file. The process used to page a process out to disk is called pageout.<p>
 <h5><span class="w3-code w3-red">Finding Memory Bottlenecks</span></h5>
 <p>Start your analysis by listing the applications that are running on the server. Determine how much physical memory and swap each application needs to run.<p>
-<h5><span class="w3-code w3-red">Finding CPU bottlenecks
- </span></h5>
+
  
-<h5><span class="w3-code w3-black">Memory available:- </span></h5>
+<h5><span class="w3-code w3-red">Memory available:- </span></h5>
 <p> This indicates how much physical memory is available for use. If, after you start your application, this value has decreased significantly, you might have a memory leak. Check the application that is causing it and make the necessary adjustments. Use free -lt for additional information.<p>
 <br>
 
-<h5><span class="w3-code w3-red">Page faults:-</span></h5>
- <br>
- <p>necessary adjustments. Use free -lt for additional information.
 
 <h5><span class="w3-code w3-red">Page faults:-</span></h5>
 
 <p>There are two types of page faults: soft page faults, when the page is found in memory, and hard page faults, when the page is not found in memory and must be fetched from disk. Accessing the disk will slow your application considerably. The sar -B command can provide useful information for analyzing page faults, specifically columns pgpgin/s and pgpgout/s.<p>
- 
+<br> 
+
  <h5><span class="w3-code w3-red">File system cache:-
 </span></h5>
-<br>
 
 <p>This is the common memory space used by the file system cache. Use the free -lt command for additional information.<p>
 <br>
  <h5><span class="w3-code w3-red">Private memory for process:-
 </span></h5>
-<p>This represents the memory used by each process running on the server. You can use the pmap command to see how much memory is allocated to a specific process.<p>
-<h5><span class="w3-code w3-red">Performance tuning options:-
-    </span></h5>
- <br>
-    
+<p>This represents the memory used by each process running on the server. You can use the pmap command to see how much memory is allocated to a specific process.<p> 
 <h5><span class="w3-code w3-red">
   Why swap is getting used though there is enough memory?
 </span></h5> 
@@ -186,23 +178,23 @@ Memory Bottlenecks</span></h5>
 “cached/cache” in free command output?</span></h5> 
 <br>
 <p>Simply it shows the amount of RAM space occupied by "Page Cache". Cache pages are nothing but the data/files which gets copied over to RAM when kernel performs read/write operation on a disk. The reason for keeping these page cache is for I/O performance. So, kernel maintains these files on RAM and frees them up whenever not required or whenever a new memory space is requested by a new process/command provided no free space available in RAM. For a simple read operations it would be marked as "clean" pages, however, writes would mark them "dirty" and becomes clean after updating on disk. These "cached" pages would remain in memory even not used and would not move out even when not required. So, as a system usage goes these cached pages size would also grow. This is usually not a concern to be worried, however, sometimes yes when "cache" is consuming most of the memory and system starts to swap pages.<p>
-<h5><span class="w3-code w3-black">[root@server ~]# renice 10 2500</span></h5> 
 
-   <h5><span class="w3-code w3-black">Performance tuning options:-
+
+   <h5><span class="w3-code w3-red">Performance tuning options:-
 </span></h5> 
 <!-- Menu Container -->
 <br>
 <h5><span class="w3-code w3-red">- Tune the swap space using bigpages, hugetlb, shared memory.
 <br>- Increase or decrease the size of pages.
 <br>- Improve the handling of active and inactive memory.
-<br>- Adjust the page<br>-out rate.
+<br>- Adjust the page out rate.
 <br>- Limit the resources used for each user on the server.
 <br>- Stop the services that are not needed.
 <br>- Add memory.</span></h5> 
 
 
-
-<h5><span class="w3-code w3-red">How to test all above tips at home for cpu high utilization.</span></h5>
+<br>
+<h5><span class="w3-code w3-red">How to test all above tips at home for Memory issue.</span></h5>
 
 <h5><span class="w3-code w3-red">"stress" tool</span></h5>
 <p><b>It is a workload generator tool designed to subject your system to a configurable measure of CPU, memory, I/O and disk stress.<b><p>
@@ -221,13 +213,16 @@ Memory Bottlenecks</span></h5>
 <h5><span class="w3-code w3-black">
 #check load before running
 <br>[root@server ~]# uptime
-<br>#putting CPU load on server
-<br>[root@server ~]# sudo stress --cpu 9 --timeout 25
+<br>#putting memory load on server
+<br>[root@server ~]# sudo stress --vm 2 --vm-bytes 300M --timeout 30s
 <br>#After runnings stress command check load
 <br>[root@server ~]# uptime
 <br>
 </span></h5>
-<h5><span class="w3-code w3-black">Now try above tuning option to reduce some load.</span></h5>
+<h5><span class="w3-code w3-red">Now try above tuning option to reduce some load.
+</span></h5>
+<h5><span class="w3-code w3-red">
+AGAIN, DO NOT TRY ANY TUNING OPTIONS IN PRODUCTION UNTILL YOU ARE FULL AWARE.</span></h5>
 
 
 <!-- Contact/Area Container -->
