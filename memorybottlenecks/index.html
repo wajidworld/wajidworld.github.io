@@ -191,23 +191,16 @@ Memory Bottlenecks</span></h5>
    <h5><span class="w3-code w3-black">Performance tuning options:-
 </span></h5> 
 <!-- Menu Container -->
-<p>1. Bind processes that cause a significant amount of interrupts to a CPU.<p>
-<p>CPU affinity enables the system administrator to bind interrupts to a group or a single
-physical processor (of course, this does not apply on a single CPU system). To change the
-affinity of any given IRQ, go into /proc/irq/%{number of respective irq}/ and change
-the CPU mask stored in the file smp_affinity. To set the affinity of IRQ 19 to the third CPU
-in a system (without SMT) use the command as per below<p>
 <br>
-<h5><span class="w3-code w3-black">#Setting the CPU affinity for interrupts
-<br>[root@server]#echo 03 > /proc/irq/19/smp_affinity</span></h5> 
+<h5><span class="w3-code w3-red">- Tune the swap space using bigpages, hugetlb, shared memory.
+<br>- Increase or decrease the size of pages.
+<br>- Improve the handling of active and inactive memory.
+<br>- Adjust the page<br>-out rate.
+<br>- Limit the resources used for each user on the server.
+<br>- Stop the services that are not needed.
+<br>- Add memory.</span></h5> 
 
-<p>2. Let physical processors handle interrupts.<p>
-<p>In symmetric multi-threading (SMT) systems such as IBM POWER 5+ processors
-supporting multi-threading, it is suggested that you bind interrupt handling to the physical
-processor rather than the SMT instance. The physical processors usually have the lower
-CPU numbering so in a two-way system with multi-threading enabled, CPU ID 0 and 2
-would refer to the physical CPU, and 1 and 3 would refer to the multi-threading instances.
-If you do not use the smp_affinity flag, you will not have to worry about this.<p>
+
 
 <h5><span class="w3-code w3-red">How to test all above tips at home for cpu high utilization.</span></h5>
 
