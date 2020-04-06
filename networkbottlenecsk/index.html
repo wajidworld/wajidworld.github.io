@@ -158,16 +158,12 @@ Network Bottlenecks</span></h5>
 <h5><span class="w3-code w3-red">The "/proc/net/dev" file would provide overall network packets received/sent/dropped/collisions etc,. This file "/proc/net/tcp" is another useful source of information which provides details about TCP socket information.
  </span></h5>
 
-
+<br>
 <h5><span class="w3-code w3-red">The "ethtool" command would be the ideal one when someone wish to see packet drops/loss at hardware level. Need to look out for "errors|drops|discards|fail|missed" etc, while analyzing the data (example: ethtool -S eth0|egrep -i "errors|drops|discards|fail|missed"). This command could also be used to identify network card driver/firmware version. Even "ip -s link" would be a good option to know about drops/errors/collisions etc.</span></h5>
 
 <br>
 <h5><span class="w3-code w3-red">Performance tuning options</span></h5>
 
-
- 
- <h5><span class="w3-code w3-red">Performance tuning options
-</span></h5>
 <p><b>These steps illustrate what you should do to solve problems related to network bottlenecks:-<b><p>
 
 
