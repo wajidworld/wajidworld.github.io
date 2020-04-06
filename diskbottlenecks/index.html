@@ -176,21 +176,19 @@ Disk I/O can take a relatively long time and disk queues will become full, so th
 <h5><span class="w3-code w3-red">iostat command</span></h5>
 <p>Performance problems can be encountered when too many files are opened, read and written to, then closed repeatedly. This could become apparent as seek times (the time it takes to move to the exact track where the data is stored) start to increase. Using the iostat tool, you can monitor the I/O device loading in real time. Different options enable you to drill down even deeper to gather the necessary data.<p>
 
-<h5><span class="w3-code w3-red">Tip: Be careful not to add to CPU problems by running too many tools at one time. You might find that using a lot of different monitoring tools at one time could be contributing to the high CPU load.</span></h5>
- <br>
- <p>Using top, you can see the CPU utilization and what processes are the biggest contributors to the problem. If you have set up sar, you are collecting a lot of information, some of which is CPU utilization, over a period of time. Analyzing this information can be difficult, so use isag, which can use sar output to plot a graph. Otherwise, you may wish to parse the information through a script and use a spreadsheet to plot it to see any trends in CPU utilization. You can also use sar from the command line by issuing sar -u or sar -U processornumber. To gain a broader perspective of the system and current utilization of more than just the CPU subsystem, a good tool is vmstat<p>
+
  
- <h5><span class="w3-code w3-black">Performance tuning options
+ <h5><span class="w3-code w3-red">Performance tuning options
 </span></h5>
 <br>
 
 
 <h5><span class="w3-code w3-red">- After verifying that the disk subsystem is a system bottleneck, several solutions are possible.
-- If the workload is of a sequential nature and it is stressing the controller bandwidth, the solution is to add a faster disk controller. However, if the workload is more random in nature, then the bottleneck is likely to involve the disk drives, and adding more drives will improve performance.
-- Add more disk drives in a RAID environment. This spreads the data across multiple physical disks and improves performance for both reads and writes. This will increase the number of I/Os per second. Also, use hardware RAID instead of the software implementation provided by Linux. If hardware RAID is being used, the RAID level is hidden from the OS.
-- Consider using Linux logical volumes with striping instead of large single disks or logical volumes without striping.
-- Offload processing to another system in the network (users, applications, or services).
-- Add more RAM. Adding memory increases system memory disk cache, which in effect improves disk response times.
+<br>- If the workload is of a sequential nature and it is stressing the controller bandwidth, the solution is to add a faster disk controller. However, if the workload is more random in nature, then the bottleneck is likely to involve the disk drives, and adding more drives will improve performance.
+<br>- Add more disk drives in a RAID environment. This spreads the data across multiple physical disks and improves performance for both reads and writes. This will increase the number of I/Os per second. Also, use hardware RAID instead of the software implementation provided by Linux. If hardware RAID is being used, the RAID level is hidden from the OS.
+<br>- Consider using Linux logical volumes with striping instead of large single disks or logical volumes without striping.
+<br>- Offload processing to another system in the network (users, applications, or services).
+<br>- Add more RAM. Adding memory increases system memory disk cache, which in effect improves disk response times.
     </span></h5>
  <br>
     
