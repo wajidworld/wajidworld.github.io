@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #808080;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://linuxhero.tk/#home">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="https://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+       <a href="https://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+       <a href="https://linuxhero.tk/linuxcommands/">Linux Commands</a>
+       <a href="https://linuxhero.tk/ntp/">Configure NTP</a>
+       <a href="https://linuxhero.tk/ssh/">Configure SSH</a>
+       <a href="https://linuxhero.tk/nfs/">Configure NFS</a>
+       <a href="https://linuxhero.tk/iscsi/">Configure iSCSI Storage</a>  
+       <a href="https://linuxhero.tk/dhcp/">Configure Dnsmasq</a>
+       <a href="https://linuxhero.tk/ftp/">Configure FTP Server</a>
+      
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="https://linuxhero.tk/Analyzebottlenecks/">Steps To Analyze Linux Performance Bottlenecks</a>
+      <a href="https://linuxhero.tk/diskbottlenecks/">DISK Bottlenecks</a>
+      <a href="https://linuxhero.tk/networkbottlenecsk/">Network Bottlenecks</a>
+      <a href="https://linuxhero.tk/
+diskbottlenecks
+/">CPU Bottlenecks</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+     <a href="https://linuxhero.tk/Analyzebottlenecks/">Steps To Analyze Linux Performance Bottlenecks</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+    <a href="http://linuxhero.tk/#Topics">New Topics</a>
+    <a href="http://linuxhero.tk/#about">About</a>
+    <a href="http://linuxhero.tk/#contact">Contact</a>
+  </div>
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-orange w3-scale w3-large">
+     <img src="/programming.gif" alt="Computer man" style="width:100px;height:100px;">
+<!-- Content -->
+<div style="max-width:1200px">
+
+  <div class="w3-content" style="max-width:1000px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
+Network Bottlenecks</span></h5>
+ <br>
+  <p>A performance problem in the network subsystem can be the cause of many problems, such as a kernel panic. To analyze these anomalies to detect network bottlenecks, each Linux distribution includes traffic analyzers.<p>
+<br>
+<h5><span class="w3-code w3-red">Finding network bottlenecks</span></h5>
+<p>There are a many common pre-checks to be done before diving into troubleshooting a glitch in network. Make sure that network drivers/firmware of system are updated. Network interface speed is matching with router/gateway speed, as we know that overall network speed would operate on slowest network component in an infrastructure.<p>
+<br>
+<p>Common Linux native network commands such as "netstat", "ip", "ethtool", "ss" (socket statistics) etc., could be used to understand network statistics and infrastructure. The "netstat" can provide details about open network connections and stack statistics. This command would basically pull data from /proc/net/[dev|tcp|unix] and other files stored under "/proc/net/" directory.<p>
+<br>
+
+
+<h5><span class="w3-code w3-red">The "/proc/net/dev" file would provide overall network packets received/sent/dropped/collisions etc,. This file "/proc/net/tcp" is another useful source of information which provides details about TCP socket information.
+ </span></h5>
+
+
+<h5><span class="w3-code w3-red">The "ethtool" command would be the ideal one when someone wish to see packet drops/loss at hardware level. Need to look out for "errors|drops|discards|fail|missed" etc, while analyzing the data (example: ethtool -S eth0|egrep -i "errors|drops|discards|fail|missed"). This command could also be used to identify network card driver/firmware version. Even "ip -s link" would be a good option to know about drops/errors/collisions etc.</span></h5>
+
+<br>
+<h5><span class="w3-code w3-red">Performance tuning options</span></h5>
+
+
+ 
+ <h5><span class="w3-code w3-red">Performance tuning options
+</span></h5>
+<p><b>These steps illustrate what you should do to solve problems related to network bottlenecks:-<b><p>
+
+
+<h5><span class="w3-code w3-red">- Ensure that the network card configuration matches router and switch configurations (for example, frame size).
+<br>- Modify how your subnets are organized.
+<br>- Use faster network cards.
+<br>- Tune the appropriate IPV4 TCP kernel parameters. Some security-related parameters can also improve performance.
+<br>- If possible, change network cards and recheck performance.
+<br>- Add network cards and bind them together to form an adapter team, if possible.
+    </span></h5>
+ <br>
+    
+
+
+
+<!-- Contact/Area Container -->
+
+<div class="w3-container" id="contact">
+    <h2>Please email me if you face any issue.</h2>
+    <form action="mailto:Allishah2490@gmail.com" method="get" enctype="text/plain">
+      <p><strong>Name: <input type="text" name="name"/></p>
+      <p><strong>Email: <input type="text" name="email"/></p>
+      <p><strong>Comments:
+        <br />
+        <textarea name="comments" rows = "12" cols = "35">Send your comments to owner.</textarea>
+        <br>
+      <p><input type="submit" name="submit" value="Send" />
+        <form action="mailto:allishah2490@gmail.com" 
+         enctype="text/plain" onsubmit="location.href='thanks.html';" >
+        <input type="reset" name="reset" value="Clear Form" />
+      </p>
+    </form>
+  </body>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
