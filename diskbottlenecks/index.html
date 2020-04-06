@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #808080;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://linuxhero.tk/#home">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="https://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+       <a href="https://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+       <a href="https://linuxhero.tk/linuxcommands/">Linux Commands</a>
+       <a href="https://linuxhero.tk/ntp/">Configure NTP</a>
+       <a href="https://linuxhero.tk/ssh/">Configure SSH</a>
+       <a href="https://linuxhero.tk/nfs/">Configure NFS</a>
+       <a href="https://linuxhero.tk/iscsi/">Configure iSCSI Storage</a>  
+       <a href="https://linuxhero.tk/dhcp/">Configure Dnsmasq</a>
+       <a href="https://linuxhero.tk/ftp/">Configure FTP Server</a>
+      
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="https://linuxhero.tk/Analyzebottlenecks/">Steps To Analyze Linux Performance Bottlenecks</a>
+      <a href="https://linuxhero.tk/cpubottlenecks/">DISK Bottlenecks</a>
+      <a href="https://linuxhero.tk/
+diskbottlenecks
+/">CPU Bottlenecks</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+     <a href="https://linuxhero.tk/Analyzebottlenecks/">Steps To Analyze Linux Performance Bottlenecks</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+    <a href="http://linuxhero.tk/#Topics">New Topics</a>
+    <a href="http://linuxhero.tk/#about">About</a>
+    <a href="http://linuxhero.tk/#contact">Contact</a>
+  </div>
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-orange w3-scale w3-large">
+     <img src="/programming.gif" alt="Computer man" style="width:100px;height:100px;">
+<!-- Content -->
+<div style="max-width:1200px">
+
+  <div class="w3-content" style="max-width:1000px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
+Disk Bottlenecks</span></h5>
+ <br>
+  <p>The disk subsystem is often the most important aspect of server performance and is usually the most common bottleneck. However, problems can be hidden by other factors, such as lack of memory. Applications are considered to be I/O-bound when CPU cycles are wasted simply waiting for I/O tasks to finish.<p>
+ <p>The most common disk bottleneck is having too few disks. Most disk configurations are based on capacity requirements, not performance. The least expensive solution is to purchase the smallest number of the largest capacity disks possible. However, this places more user data on each disk, causing greater I/O rates to the physical disk and allowing disk bottlenecks to occur.<p>
+<p>The second most common problem is having too many logical disks on the same array. This increases seek time and significantly lowers performance.<p>
+<br>
+<h5><span class="w3-code w3-red">Finding disk bottlenecks</span></h5>
+<p>A server exhibiting the following symptoms might be suffering from a disk bottleneck (or a hidden memory problem):<p>
+<p>Slow disks will result in:-<p>
+<p>– Memory buffers filling with write data (or waiting for read data), which will delay all requests because free memory buffers are unavailable for write requests (or the response is waiting for read data in the disk queue).<p>
+<p>– Insufficient memory, as in the case of not enough memory buffers for network requests, will cause synchronous disk I/O.<p>
+<br>
+
+<p>Disk utilization, controller utilization, or both will typically be very high.
+Most LAN transfers will happen only after disk I/O has completed, causing very long response times and low network utilization.
+Disk I/O can take a relatively long time and disk queues will become full, so the CPUs will be idle or have low utilization because they wait long periods of time before processing the next request.<p>
+
+<p>The disk subsystem is perhaps the most challenging subsystem to properly configure. Besides looking at raw disk interface speed and disk capacity, it is also important to understand the workload. Is disk access random or sequential? Is there large I/O or small I/O? Answering these questions provides the necessary information to make sure the disk subsystem is adequately tuned.<p>
+<br>
+<p>Disk manufacturers tend to showcase the upper limits of their drive technology’s throughput. However, taking the time to understand the throughput of your workload will help you understand what true expectations to have of your underlying disk subsystem.<p>
+
+<h5><span class="w3-code w3-red">There are two ways to approach disk bottleneck analysis: real-time monitoring and tracing.
+ </span></h5>
+ <p>1. Real-time monitoring must be done while the problem is occurring. This might not be practical in cases where system workload is dynamic and the problem is not repeatable. However, if the problem is repeatable, this method is flexible because of the ability to add objects and counters as the problem becomes clear.<p>
+
+<p>2. Tracing is the collecting of performance data over time to diagnose a problem. This is a good way to perform remote performance analysis. Some of the drawbacks include the potential for having to analyze large files when performance problems are not repeatable, and the potential for not having all key objects and parameters in the trace and having to wait for the next time the problem occurs for the additional data.<p>
+
+<h5><span class="w3-code w3-red">vmstat command</span></h5>
+<p>One way to track disk usage on a Linux system is by using the vmstat tool. The important columns in vmstat with respect to I/O are the bi and bo fields. These fields monitor the movement of blocks in and out of the disk subsystem. Having a baseline is key to being able to identify any changes over time.<p>
+<br>
+<h5><span class="w3-code w3-red">iostat command</span></h5>
+<p>Performance problems can be encountered when too many files are opened, read and written to, then closed repeatedly. This could become apparent as seek times (the time it takes to move to the exact track where the data is stored) start to increase. Using the iostat tool, you can monitor the I/O device loading in real time. Different options enable you to drill down even deeper to gather the necessary data.<p>
+
+<h5><span class="w3-code w3-red">Tip: Be careful not to add to CPU problems by running too many tools at one time. You might find that using a lot of different monitoring tools at one time could be contributing to the high CPU load.</span></h5>
+ <br>
+ <p>Using top, you can see the CPU utilization and what processes are the biggest contributors to the problem. If you have set up sar, you are collecting a lot of information, some of which is CPU utilization, over a period of time. Analyzing this information can be difficult, so use isag, which can use sar output to plot a graph. Otherwise, you may wish to parse the information through a script and use a spreadsheet to plot it to see any trends in CPU utilization. You can also use sar from the command line by issuing sar -u or sar -U processornumber. To gain a broader perspective of the system and current utilization of more than just the CPU subsystem, a good tool is vmstat<p>
+ 
+ <h5><span class="w3-code w3-black">Performance tuning options
+</span></h5>
+<br>
+
+
+<h5><span class="w3-code w3-red">- After verifying that the disk subsystem is a system bottleneck, several solutions are possible.
+- If the workload is of a sequential nature and it is stressing the controller bandwidth, the solution is to add a faster disk controller. However, if the workload is more random in nature, then the bottleneck is likely to involve the disk drives, and adding more drives will improve performance.
+- Add more disk drives in a RAID environment. This spreads the data across multiple physical disks and improves performance for both reads and writes. This will increase the number of I/Os per second. Also, use hardware RAID instead of the software implementation provided by Linux. If hardware RAID is being used, the RAID level is hidden from the OS.
+- Consider using Linux logical volumes with striping instead of large single disks or logical volumes without striping.
+- Offload processing to another system in the network (users, applications, or services).
+- Add more RAM. Adding memory increases system memory disk cache, which in effect improves disk response times.
+    </span></h5>
+ <br>
+    
+
+
+
+<!-- Contact/Area Container -->
+
+<div class="w3-container" id="contact">
+    <h2>Please email me if you face any issue.</h2>
+    <form action="mailto:Allishah2490@gmail.com" method="get" enctype="text/plain">
+      <p><strong>Name: <input type="text" name="name"/></p>
+      <p><strong>Email: <input type="text" name="email"/></p>
+      <p><strong>Comments:
+        <br />
+        <textarea name="comments" rows = "12" cols = "35">Send your comments to owner.</textarea>
+        <br>
+      <p><input type="submit" name="submit" value="Send" />
+        <form action="mailto:allishah2490@gmail.com" 
+         enctype="text/plain" onsubmit="location.href='thanks.html';" >
+        <input type="reset" name="reset" value="Clear Form" />
+      </p>
+    </form>
+  </body>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
