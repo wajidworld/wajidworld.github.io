@@ -219,7 +219,7 @@ Kubernetes</span></h5>
 <h5><span class="w3-code w3-black">[root@master ~]# swapoff -a
 <br>[root@master ~]# kubeadm init
 #Copy last line because you will need to run it on the worker nodes.It will look like as below.
-kubeadm join 192.0.0.20:6443 --token 0734wq.nxruvpz3ddneizn7 \
+<br>kubeadm join 192.0.0.20:6443 --token 0734wq.nxruvpz3ddneizn7 \
     --discovery-token-ca-cert-hash sha256:107866f0cfa9a467508bf2ecbb18ab9be8750c82cda6d598ada64686bc686c6a
 </span></h5>
 <br>
@@ -231,10 +231,9 @@ kubeadm join 192.0.0.20:6443 --token 0734wq.nxruvpz3ddneizn7 \
 <br>[root@master ~]# chown $(id -u):$(id -g) $HOME/.kube/config
 </span></h5>
 
-
+<br>
 <h5><span class="w3-code w3-red">Step:9 Setup Your Pod Network
 </span></h5>
-<br>
 <h5><span class="w3-code w3-black">
 [root@master ~]# export kubever=$(kubectl version | base64 | tr -d '\n')
 <br>[root@master ~]# kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
@@ -245,9 +244,8 @@ kubeadm join 192.0.0.20:6443 --token 0734wq.nxruvpz3ddneizn7 \
 [root@master ~]# kubectl get nodes
 </span></h5>
 <br>
+<h5><span class="w3-code w3-red">Setup Worker Node:-</span></h5>
 <br>
-<h5><span class="w3-code w3-red">Setup Worker Node</span></h5>
-<h5><span class="w3-code w3-black">
 <h5><span class="w3-code w3-red"> Step:1 Update Hostname
 </span></h5>
 
