@@ -165,22 +165,9 @@ features are available from CloudBees Jenkins Enterprise.<i><p>
 <h5><span class="w3-code w3-red"> Step:1 Add Jenkins Repository
 </span></h5>
 
- <p><b>Configure vsftpd<b><p>
- <p>Edit vsftpd configuration file /etc/vsftpd/vsftpd.conf<p>
- <h5><span class="w3-code w3-black">[root@server ~]# vi /etc/vsftpd/vsftpd.conf
-<br>## Disable anonymous login ##
-<br>anonymous_enable=NO
-<br>
-<br>## Uncomment ##
-<br>ascii_upload_enable=YES
-<br>ascii_download_enable=YES
-<br>
-<br>## Add at the end of this  file ##
-<>bruse_localtime=YES
-</span></h5>
-<br>
+ 
 
-<p><i>Jenkins package is not available in the default CentOS and RHEL repositories. So we need to add jenkins repository using the beneath commands.<i><p>
+<h5><span class="w3-code w3-red">Jenkins package is not available in the default CentOS and RHEL repositories. So we need to add jenkins repository using the beneath commands.</span></h5>
  <br>
  <h5><span class="w3-code w3-black">[root@server ~]#  wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat-stable/jenkins.repo
 <br>[root@server ~]#  rpm --import http://pkg.jenkins.io/redhat-stable/jenkins.io.key
@@ -213,7 +200,7 @@ features are available from CloudBees Jenkins Enterprise.<i><p>
 <br>
 <h5><span class="w3-code w3-red">Step:5 Access the Jenkins Web portal
 </span></h5>
-<p><b>Access the URL : http://<Ip-Address-of-your-Server>:8080<b><p>
+<p><b>Access the URL : http://Ip-Address-of-your-Server:8080<b><p>
 <br>
 <h5><span class="w3-code w3-red">Admin password is created and stored in the log file  “/var/log/jenkins/jenkins.log“. Run the below command to get the password.
 </span></h5>
