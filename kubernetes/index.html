@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #808080;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://linuxhero.tk/#home">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+       <a href="http://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+       <a href="http://linuxhero.tk/linuxcommands/">Linux Commands</a>
+       <a href="http://linuxhero.tk/ntp/">Configure NTP</a>
+       <a href="http://linuxhero.tk/ssh/">Configure SSH</a>
+       <a href="http://linuxhero.tk/nfs/">Configure NFS</a>
+       <a href="http://linuxhero.tk/iscsi/">Configure iSCSI Storage</a>  
+        <a href="http://linuxhero.tk/dhcp/">Configure Dnsmasq</a>
+         <a href="http://linuxhero.tk/ftp/">Configure FTP Server</a>
+      
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+    <a href="https://linuxhero.tk/#Topics">New Topics</a>
+    <a href="https://linuxhero.tk/#about">About</a>
+    <a href="https://linuxhero.tk/#contact">Contact</a>
+  </div>
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-orange w3-scale w3-large">
+     <img src="/programming.gif" alt="Computer man" style="width:100px;height:100px;">
+<!-- Content -->
+<div style="max-width:1200px">
+
+  <div class="w3-content" style="max-width:1000px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
+Kubernetes</span></h5>
+
+  <p><i>It is easy to get lost in the details of Kubernetes, but at the end of the day, what Kubernetes is doing is pretty simple. Cheryl Hung of the CNCF describes Kubernetes as a control loop. Declare how you want your system to look (3 copies of container image a and 2 copies of container image b) and Kubernetes makes that happen. Kubernetes compares the desired state to the actual state, and if they aren’t the same, it takes steps to correct it. <i><p>
+  <p><i>Kubernetes is made up many components that do not know are care about each other. The components all talk to each other through the API server. Each of these components operates its own function and then exposes metrics, that we can collect for monitoring later on. We can break down the components into three main parts.<i><p>
+<p><i>1. The Control Plane - The Master
+<br>2. Nodes - Where pods get scheduled
+<br>3. Pods - Holds containers<i><p>
+<p><i>Kubernetes and Docker are both comprehensive de-facto solutions to intelligently manage containerized applications and provide powerful capabilities, and from this some confusion has emerged. “Kubernetes” is now sometimes used as a shorthand for an entire container environment based on Kubernetes. In reality, they are not directly comparable, have different roots, and solve for different things.<i><p>
+
+<h5><span class="w3-code w3-red">Install and Configure Kubernetes:-
+ </span></h5>
+ <br>
+<h5><span class="w3-code w3-red"> Step:1 Update Hostname
+</span></h5>
+
+ <h5><span class="w3-code w3-black">[root@master ~]# vim /etc/hosts
+<br># hostnamectl set-hostname master-node
+<br># cat <<EOF>> /etc/hosts
+<br>192.0.0.20 master-node
+<br>192.0.0.30 worker-node
+</span></h5>
+ <br>
+ <h5><span class="w3-code w3-red">Step:2  Disable Selinux
+    </span></h5>
+  <h5><span class="w3-code w3-black">[root@master ~]# setenforce 0
+<br>[root@master ~]# sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+<br>[root@master ~]# reboot
+   </span></h5>
+  <br>
+    <h5><span class="w3-code w3-red">Step:3 Allow ports on Firewall If it is running
+    </span></h5>
+     <h5><span class="w3-code w3-black">[root@master ~]# firewall-cmd --permanent --add-port=6443/tcp
+<br>[root@master ~]# firewall-cmd --permanent --add-port=2379-2380/tcp
+<br>[root@master ~]# firewall-cmd --permanent --add-port=10250/tcp
+<br>[root@master ~]# firewall-cmd --permanent --add-port=10251/tcp
+<br>[root@master ~]# firewall-cmd --permanent --add-port=10252/tcp
+<br>[root@master ~]# firewall-cmd --permanent --add-port=10255/tcp
+<br>[root@master ~]# firewall-cmd –reload
+<br>[root@master ~]# modprobe br_netfilter
+<br>[root@master ~]# echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
+   </span></h5>
+    <br>
+    
+    <h5><span class="w3-code w3-red">Step:4 Setup the Kubernetes Repo
+    </span></h5>
+    
+<h5><span class="w3-code w3-black">
+  [root@master ~]# cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+<br>[kubernetes]
+<br>name=Kubernetes
+<br>baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+<br>enabled=1
+<br>gpgcheck=1
+<br>repo_gpgcheck=1
+<br>gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-<br>package-key.gpg
+<br>EOF
+</span></h5> 
+
+<br>
+
+<h5><span class="w3-code w3-red">Step:5 Install Kubeadm and Docker
+</span></h5>
+
+<h5><span class="w3-code w3-black">[root@master ~]#  yum install kubeadm docker -y 
+</span></h5> 
+<br>
+<h5><span class="w3-code w3-red">Step:6 Start and Enable Services
+</span></h5>
+<h5><span class="w3-code w3-black">[root@master ~]# systemctl enable docker
+<br>[root@master ~]# systemctl start docker
+<br>[root@master ~]# systemctl enable kubelet 
+<br>[root@master ~]# systemctl start kubelet
+</span></h5> 
+<br>
+
+<h5><span class="w3-code w3-red">Step:7 Initialize Kubernetes Master
+</span></h5>
+<h5><span class="w3-code w3-black">[root@master ~]# swapoff -a
+<br>[root@master ~]# kubeadm init
+#Copy last line because you will need to run it on the worker nodes.It will look like as below.
+kubeadm join 192.0.0.20:6443 --token 0734wq.nxruvpz3ddneizn7 \
+    --discovery-token-ca-cert-hash sha256:107866f0cfa9a467508bf2ecbb18ab9be8750c82cda6d598ada64686bc686c6a
+</span></h5>
+<br>
+<h5><span class="w3-code w3-red">Step:8 In order to use root, Please run below:
+
+</span></h5>
+<h5><span class="w3-code w3-black">[root@master ~]# mkdir -p $HOME/.kube
+<br>[root@master ~]# cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
+<br>[root@master ~]# chown $(id -u):$(id -g) $HOME/.kube/config
+</span></h5>
+
+
+<h5><span class="w3-code w3-red">Step:9 Setup Your Pod Network
+</span></h5>
+<br>
+<h5><span class="w3-code w3-black">
+[root@master ~]# export kubever=$(kubectl version | base64 | tr -d '\n')
+<br>[root@master ~]# kubectl apply -f "https://cloud.weave.works/k8s/net?k8s-version=$kubever"
+</span></h5>
+<br>
+<h5><span class="w3-code w3-red">Now check the status of your master-node, it should be Ready.</span></h5>
+<h5><span class="w3-code w3-black">
+[root@master ~]# kubectl get nodes
+</span></h5>
+<br>
+<br>
+<h5><span class="w3-code w3-red">Setup Worker Node</span></h5>
+<h5><span class="w3-code w3-black">
+
+
+
+
+<h5><span class="w3-code w3-red">Now, You are ready to use docker!</span></h5> 
+
+
+<!-- Contact/Area Container -->
+
+<div class="w3-container" id="contact">
+    <h2>Please email me if you face any issue.</h2>
+    <form action="mailto:Mdsulemanroayl23@gmail.com" method="get" enctype="text/plain">
+      <p><strong>Name: <input type="text" name="name"/></p>
+      <p><strong>Email: <input type="text" name="email"/></p>
+      <p><strong>Comments:
+        <br />
+        <textarea name="comments" rows = "12" cols = "35">Send your comments to owner.</textarea>
+        <br>
+      <p><input type="submit" name="submit" value="Send" />
+        <form action="mailto:allishah2490@gmail.com" 
+         enctype="text/plain" onsubmit="location.href='thanks.html';" >
+        <input type="reset" name="reset" value="Clear Form" />
+      </p>
+    </form>
+  </body>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
