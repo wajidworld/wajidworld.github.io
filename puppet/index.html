@@ -164,10 +164,13 @@ configuration files to reflect their project.<i><p>
 
 <h5 <span class="w3-tag w3-red">[Puppet Master] |192.0.0.20 ---------------- 192.0.0.30|  [Puppet Agent] <br>Master.example.com  <--------------------->  Agent.example.com</span></h5>
 
-<h5><span class="w3-code w3-red">Install and Configure Puppet Master:-
+<h5><span class="w3-code w3-red">Lets start to configure Puppet:-
  </span></h5>
  <br>
-
+    
+<h5><span class="w3-code w3-red">Configure Puppet Master:-
+ </span></h5>
+ <br>
 <h5><span class="w3-code w3-red"> Step:1 Update Hostname
 </span></h5> <h5><span class="w3-code w3-black">[root@master ~]# vim /etc/hosts
 <br>192.0.0.20 master.example.com
@@ -229,7 +232,63 @@ configuration files to reflect their project.<i><p>
     <br>
     <h5><span class="w3-code w3-black">firewall-cmd --add-port=8140/tcp --permanent
 <br>firewall-cmd --reload</span></h5>
+<br>
+    <h5><span class="w3-code w3-red">Configure Puppet Agent:-
+ </span></h5>
+ <br>
+    
+    <h5><span class="w3-code w3-red">Step:1 Install and Configure Puppet Agent
+ </span></h5>
+    <h5><span class="w3-code w3-black">[root@agent ~]# yum install -y puppet-agent
+    <br>   [root@master ~]# systemctl puppetserver  </span></h5>
+    <br>
+    
+    <h5><span class="w3-code w3-black">[root@agent ~]# cd /etc/puppetlabs/puppet
+<br>vim puppet.conf
+<br># Paste the following configuration.
+ <br> [main]
+ <br>certname = agent.example.com
+ <br>server = master.example.com
+ <br>environment = production
+ <br>runinterval = 1h
+   </span></h5>  
+    
+    <h5><span class="w3-code w3-red">Step:2 # Next, we will register the puppet agent to the puppet master.
+<br># Run the command below on the puppet agent shell.
+  </span></h5>
+   <h5><span class="w3-code w3-black">[root@agent ~]# /opt/puppetlabs/bin/puppet resource service puppet ensure=running enable=true
+     </span></h5>
+    
+    <h5><span class="w3-code w3-red">The puppet agent is now running on the server, and it's attempting to register itself to the puppet master.
+    
+<br>Step:3  Now back to the puppet master shell and run the command below.   
+  </span></h5>
+    <br>
+    
+    <h5><span class="w3-code w3-black">[root@master ~]# /opt/puppetlabs/bin/puppet cert list
+     </span></h5>
+   <br>
+    <h5><span class="w3-code w3-red">Step:4 Sign the certificate using the command below.
+  </span></h5>
+    <h5><span class="w3-code w3-black">[root@master ~]# /opt/puppetlabs/bin/puppet cert sign agent.example.com
+     </span></h5>
+    <br>
+    <h5><span class="w3-code w3-red">Step:5  Verify the Puppet Agent Configuration from agent machine
+  </span></h5>
+    <h5><span class="w3-code w3-black"> [root@agent ~]# /opt/puppetlabs/bin/puppet agent --test
+     </span></h5>
+   <br>
+   <h5><span class="w3-code w3-red"> The puppet master and agent installation and configuration have been completed.</span></h5>
+ 
+    
+   
 
+
+
+    
+    
+    
+    
 <!-- Contact/Area Container -->
 
 <div class="w3-container" id="contact">
