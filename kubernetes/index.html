@@ -223,7 +223,7 @@ kubeadm join 192.0.0.20:6443 --token 0734wq.nxruvpz3ddneizn7 \
     --discovery-token-ca-cert-hash sha256:107866f0cfa9a467508bf2ecbb18ab9be8750c82cda6d598ada64686bc686c6a
 </span></h5>
 <br>
-<h5><span class="w3-code w3-red">Step:8 In order to use root, Please run below:
+<h5><span class="w3-code w3-red">Step:8 In order to use as root, Please run below:
 
 </span></h5>
 <h5><span class="w3-code w3-black">[root@master ~]# mkdir -p $HOME/.kube
@@ -248,11 +248,93 @@ kubeadm join 192.0.0.20:6443 --token 0734wq.nxruvpz3ddneizn7 \
 <br>
 <h5><span class="w3-code w3-red">Setup Worker Node</span></h5>
 <h5><span class="w3-code w3-black">
+<h5><span class="w3-code w3-red"> Step:1 Update Hostname
+</span></h5>
 
+ <h5><span class="w3-code w3-black">[root@master ~]# vim /etc/hosts
+<br># hostnamectl set-hostname master-node
+<br># cat <<EOF>> /etc/hosts
+<br>192.0.0.20 master-node
+<br>192.0.0.30 worker-node
+</span></h5>
+ <br>
+ <h5><span class="w3-code w3-red">Step:2  Disable Selinux
+    </span></h5>
+  <h5><span class="w3-code w3-black">[root@master ~]# setenforce 0
+<br>[root@master ~]# sed -i --follow-symlinks 's/SELINUX=enforcing/SELINUX=disabled/g' /etc/sysconfig/selinux
+<br>[root@master ~]# reboot
+   </span></h5>
+  <br>
+    <h5><span class="w3-code w3-red">Step:3 Allow ports on Firewall If it is running
+    </span></h5>
+     <h5><span class="w3-code w3-black">[root@master ~]# firewall-cmd --permanent --add-port=6443/tcp
+<br>[root@master ~]# firewall-cmd --permanent --add-port=2379-2380/tcp
+<br>[root@master ~]# firewall-cmd --permanent --add-port=10250/tcp
+<br>[root@master ~]# firewall-cmd --permanent --add-port=10251/tcp
+<br>[root@master ~]# firewall-cmd --permanent --add-port=10252/tcp
+<br>[root@master ~]# firewall-cmd --permanent --add-port=10255/tcp
+<br>[root@master ~]# firewall-cmd –reload
+<br>[root@master ~]# modprobe br_netfilter
+<br>[root@master ~]# echo '1' > /proc/sys/net/bridge/bridge-nf-call-iptables
+   </span></h5>
+    <br>
+    
+    <h5><span class="w3-code w3-red">Step:4 Setup the Kubernetes Repo
+    </span></h5>
+    
+<h5><span class="w3-code w3-black">
+  [root@master ~]# cat <<EOF > /etc/yum.repos.d/kubernetes.repo
+<br>[kubernetes]
+<br>name=Kubernetes
+<br>baseurl=https://packages.cloud.google.com/yum/repos/kubernetes-el7-x86_64
+<br>enabled=1
+<br>gpgcheck=1
+<br>repo_gpgcheck=1
+<br>gpgkey=https://packages.cloud.google.com/yum/doc/yum-key.gpg https://packages.cloud.google.com/yum/doc/rpm-<br>package-key.gpg
+<br>EOF
+</span></h5> 
 
+<br>
 
+<h5><span class="w3-code w3-red">Step:5 Install Kubeadm and Docker
+</span></h5>
 
-<h5><span class="w3-code w3-red">Now, You are ready to use docker!</span></h5> 
+<h5><span class="w3-code w3-black">[root@master ~]#  yum install kubeadm docker -y 
+</span></h5> 
+<br>
+<h5><span class="w3-code w3-red">Step:6 Start and Enable Services
+</span></h5>
+<h5><span class="w3-code w3-black">[root@master ~]# systemctl enable docker
+<br>[root@master ~]# systemctl start docker
+<br>[root@master ~]# systemctl enable kubelet 
+<br>[root@master ~]# systemctl start kubelet
+</span></h5> 
+<br>
+  <h5><span class="w3-code w3-red">Step:7 Join the Worker Node to the Kubernetes Cluster
+</span></h5>
+  
+  <h5><span class="w3-code w3-black">#paste here the copied line from master 
+    [root@worker ~]# 
+  kubeadm join 192.0.0.20:6443 --token 0734wq.nxruvpz3ddneizn7 \
+    --discovery-token-ca-cert-hash sha256:107866f0cfa9a467508bf2ecbb18ab9be8750c82cda6d598ada64686bc686c6a
+</span></h5> 
+  <br>
+  
+  <h5><span class="w3-code w3-red">Step:8 In order to use as root, Please run below:
+
+</span></h5>
+<h5><span class="w3-code w3-black">[root@master ~]# mkdir -p $HOME/.kube
+<br>[root@master ~]# cp -i /etc/kubernetes/kubelet.conf $HOME/.kube/config
+<br>[root@master ~]# chown $(id -u):$(id -g) $HOME/.kube/config
+</span></h5>
+ <br>
+  <h5><span class="w3-code w3-red">Now check the status of your master-node, it will show worker-node also.</span></h5>
+<h5><span class="w3-code w3-black">
+[root@master ~]# kubectl get nodes
+</span></h5>
+<br>
+  
+<h5><span class="w3-code w3-red">Now, You are ready to use kubernetes!</span></h5> 
 
 
 <!-- Contact/Area Container -->
