@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #808080;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://linuxhero.tk/#home">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+       <a href="http://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+       <a href="http://linuxhero.tk/linuxcommands/">Linux Commands</a>
+       <a href="http://linuxhero.tk/ntp/">Configure NTP</a>
+       <a href="http://linuxhero.tk/ssh/">Configure SSH</a>
+       <a href="http://linuxhero.tk/nfs/">Configure NFS</a>
+       <a href="http://linuxhero.tk/iscsi/">Configure iSCSI Storage</a>  
+        <a href="http://linuxhero.tk/dhcp/">Configure Dnsmasq</a>
+         <a href="http://linuxhero.tk/ftp/">Configure FTP Server</a>
+      
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+    <a href="https://linuxhero.tk/#Topics">New Topics</a>
+    <a href="https://linuxhero.tk/#about">About</a>
+    <a href="https://linuxhero.tk/#contact">Contact</a>
+  </div>
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-orange w3-scale w3-large">
+     <img src="/programming.gif" alt="Computer man" style="width:100px;height:100px;">
+<!-- Content -->
+<div style="max-width:1200px">
+
+  <div class="w3-content" style="max-width:1000px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
+Jenkins</span></h5>
+  <p><i>If there is one tool that the vast majority of DevOps teams have
+deployed, it is Jenkins. There are other tools, but Jenkins is the
+“Got DevOps?” standard. If Jenkins has a problem, it is one of
+abundance. The Jenkins plugin category is an embarrassment
+of riches: As many as 1,500 different plugins are available for
+Jenkins.<i><p>
+  <p><i>Certainly, Jenkins has taken steps to make plugin selection
+easier for its users, but the first thing every new user asks is,
+“Which plugins do I need?” Short answer: As few as possible.
+Especially at first. Start with a source code management (SCM)
+repository plugin (GitHub, BitBucket or Local Git, for example)
+and another plugin for builds (Gradle or Maven, for example).
+More can be added later, but starting light keeps the build/test
+environment simple and manageable, and doesn’t load down
+Jenkins with unnecessary plugins.<i><p>
+<p><i>Jenkins 2.0 also includes Jenkins Pipeline and a friendlier
+interface (Blue Ocean). Managed Jenkins and other enterprise
+features are available from CloudBees Jenkins Enterprise.<i><p>
+
+<h5><span class="w3-code w3-red">Install and Configure Jenkins:-
+ </span></h5>
+ <br>
+<h5><span class="w3-code w3-red"> Step:1 Add Jenkins Repository
+</span></h5>
+
+ <p><b>Configure vsftpd<b><p>
+ <p>Edit vsftpd configuration file /etc/vsftpd/vsftpd.conf<p>
+ <h5><span class="w3-code w3-black">[root@server ~]# vi /etc/vsftpd/vsftpd.conf
+<br>## Disable anonymous login ##
+<br>anonymous_enable=NO
+<br>
+<br>## Uncomment ##
+<br>ascii_upload_enable=YES
+<br>ascii_download_enable=YES
+<br>
+<br>## Add at the end of this  file ##
+<>bruse_localtime=YES
+</span></h5>
+<br>
+
+<p><i>Jenkins package is not available in the default CentOS and RHEL repositories. So we need to add jenkins repository using the beneath commands.<i><p>
+ <br>
+ <h5><span class="w3-code w3-black">[root@server ~]#  wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins.io/redhat-stable/jenkins.repo
+<br>[root@server ~]#  rpm --import http://pkg.jenkins.io/redhat-stable/jenkins.io.key
+    </span></h5>
+ <br>
+ <h5><span class="w3-code w3-red">Step:2 Install Jenkins and Java
+    </span></h5>
+  <h5><span class="w3-code w3-black">[root@server ~]#  yum install jenkins java-1.8.0-openjdk –y
+   </span></h5>
+  <br>
+    <h5><span class="w3-code w3-red">Step:3 Start and Enable Jenkins Service
+    </span></h5>
+     <h5><span class="w3-code w3-black">[root@server ~]#  systemctl start jenkins
+    [root@server ~]# systemctl enable jenkins
+   </span></h5>
+    <br>
+    
+    <h5><span class="w3-code w3-red">Step:4 Open the ports (80 and 8080) in OS firewall.
+    </span></h5>
+    
+<h5><span class="w3-code w3-black">
+  [root@server ~]# firewall-cmd --zone=public --add-port=8080/tcp --permanent
+<br>success
+<br>[root@server ~]# firewall-cmd --zone=public --add-service=http --permanent
+<br>success
+<br>[root@server ~]# firewall-cmd --reload
+<br>success
+<br>[root@server ~]#
+</span></h5> 
+<br>
+<h5><span class="w3-code w3-red">Step:5 Access the Jenkins Web portal
+</span></h5>
+<p><b>Access the URL : http://<Ip-Address-of-your-Server>:8080<b><p>
+<br>
+<h5><span class="w3-code w3-red">Admin password is created and stored in the log file  “/var/log/jenkins/jenkins.log“. Run the below command to get the password.
+</span></h5>
+<h5><span class="w3-code w3-black">[root@server ~]# grep -A 5 password /var/log/jenkins/jenkins.log
+</span></h5> 
+<br>
+<h5><span class="w3-code w3-red">Copy the password and use it to login then Select the option : Install suggested plugins.</span></h5> 
+<br>
+<h5><span class="w3-code w3-red">Now, You are ready to use jenkins!</span></h5> 
+
+
+<!-- Contact/Area Container -->
+
+<div class="w3-container" id="contact">
+    <h2>Please email me if you face any issue.</h2>
+    <form action="mailto:Mdsulemanroayl23@gmail.com" method="get" enctype="text/plain">
+      <p><strong>Name: <input type="text" name="name"/></p>
+      <p><strong>Email: <input type="text" name="email"/></p>
+      <p><strong>Comments:
+        <br />
+        <textarea name="comments" rows = "12" cols = "35">Send your comments to owner.</textarea>
+        <br>
+      <p><input type="submit" name="submit" value="Send" />
+        <form action="mailto:allishah2490@gmail.com" 
+         enctype="text/plain" onsubmit="location.href='thanks.html';" >
+        <input type="reset" name="reset" value="Clear Form" />
+      </p>
+    </form>
+  </body>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
