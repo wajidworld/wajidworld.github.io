@@ -279,8 +279,46 @@ configuration files to reflect their project.<i><p>
      </span></h5>
    <br>
    <h5><span class="w3-code w3-red"> The puppet master and agent installation and configuration have been completed.</span></h5>
- 
+ <br>
+    <h5><span class="w3-code w3-red">Create Your First Manifest
+  </span></h5>
     
+    <p><i>we will create a simple manifest for testing.
+
+<br>We will create the manifest for Apache httpd web server installation.<i><p>
+
+<h5><span class="w3-code w3-red">On the puppet master server, go to the '/etc/puppetlabs/code/' directory and create the new manifest file 'myconfig.pp' using vim.</span></h5>
+<br>
+    <h5><span class="w3-code w3-black"> [root@master ~]# cd /etc/puppetlabs/code/
+<br>[root@master ~]# cd environments/production/manifests
+     </span></h5> 
+      <br>
+     <h5><span class="w3-code w3-red">  Create new manifest file.</span></h5>
+      <h5><span class="w3-code w3-black"> [root@master ~]#  vim myconfig.pp
+       <br> node 'agent.example.com' {
+     <br>package { 'httpd':
+        <br> ensure  => "installed",
+     <br>}
+     <br>service { 'httpd':
+        <br> ensure => running,
+     <br>enable => true
+     <br>}
+ <br>}
+     </span></h5>
+      <br>
+      <h5><span class="w3-code w3-red">Run below command on agent<span></h5>
+       <h5><span class="w3-code w3-black">[root@agent ~]#  /opt/puppetlabs/bin/puppet agent --test<span></h5>
+       <h5><span class="w3-code w3-red"> #The command will retrieve new manifest configuration file from the puppet master and then apply it to the agent server.
+          <br>Open your web browser and type the IP address of the puppet agent.
+         <span></h5>
+         
+         <h5><span class="w3-code w3-red">http://10.0.15.11/
+
+<br>And you will get the default HTTP page.<span></h5>
+       <br>
+           <h5><span class="w3-code w3-red">Now, You are ready to use it! <span></h5>
+           
+      
    
 
 
