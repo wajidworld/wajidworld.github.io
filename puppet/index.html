@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #808080;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://linuxhero.tk/#home">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+       <a href="http://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+       <a href="http://linuxhero.tk/linuxcommands/">Linux Commands</a>
+       <a href="http://linuxhero.tk/ntp/">Configure NTP</a>
+       <a href="http://linuxhero.tk/ssh/">Configure SSH</a>
+       <a href="http://linuxhero.tk/nfs/">Configure NFS</a>
+       <a href="http://linuxhero.tk/iscsi/">Configure iSCSI Storage</a>  
+        <a href="http://linuxhero.tk/dhcp/">Configure Dnsmasq</a>
+         <a href="http://linuxhero.tk/ftp/">Configure FTP Server</a>
+      
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+    <a href="https://linuxhero.tk/#Topics">New Topics</a>
+    <a href="https://linuxhero.tk/#about">About</a>
+    <a href="https://linuxhero.tk/#contact">Contact</a>
+  </div>
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-orange w3-scale w3-large">
+     <img src="/programming.gif" alt="Computer man" style="width:100px;height:100px;">
+<!-- Content -->
+<div style="max-width:1200px">
+
+  <div class="w3-content" style="max-width:1000px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
+Puppet</span></h5>
+
+  <p><i>If there was ever a ubiquitous tool for DevOps software
+deployment, it is Puppet. Even if an organization isn’t “doing
+DevOps,” it probably is using Puppet somewhere. Puppet is very
+good at getting applications deployed to pre-built infrastructure.
+For those just getting started with deployment automation,
+Puppet is a good place to start. But it is not just for beginners:
+According to the company, more than 3 in 4 Fortune 100
+companies use Puppet for application deployment<i><p>
+
+  <p><i>Puppet automates the installation and configuration of
+applications on target servers. By writing scripts that define
+and install application prerequisites, setting the server
+variables the application requires and writing configuration
+scripts for applications and daemons, a team can then
+simply rerun the script to reinstall. A large user community
+has already scripted many application installations. For a
+large number of software applications — particularly in the
+open source realm — users merely need to download the
+relevant puppet script files and change what is written to the
+configuration files to reflect their project.<i><p>
+
+<h5 <span class="w3-tag w3-red">[Puppet Master] |192.0.0.20 ---------------- 192.0.0.30|  [Puppet Agent] <br>Master.example.com  <--------------------->  Agent.example.com</span></h5>
+
+<h5><span class="w3-code w3-red">Install and Configure Puppet Master:-
+ </span></h5>
+ <br>
+
+<h5><span class="w3-code w3-red"> Step:1 Update Hostname
+</span></h5> <h5><span class="w3-code w3-black">[root@master ~]# vim /etc/hosts
+<br>192.0.0.20 master.example.com
+<br>192.0.0.30 agent.example.com
+<br>
+<br>#Now try to ping by name, make sure you get the server IP address
+<br>[root@master ~]# ping master.example.com
+<br>[root@master ~]# ping agent.example.com
+</span></h5>
+ <br>
+ <h5><span class="w3-code w3-red">Step:2  Configure NTP Server
+    </span></h5>
+  <h5><span class="w3-code w3-black">[root@master ~]#  yum -y install ntp ntpdate
+  <br>[root@master ~]# ntpdate 0.centos.pool.ntp.org
+   <br>[root@master ~]# systemctl start ntpd
+    <br>   [root@master ~]# systemctl enable ntpd    
+   </span></h5>
+  <br>
+    <h5><span class="w3-code w3-red">Step:3 Disable SELinux
+    </span></h5>
+     <h5><span class="w3-code w3-black">[root@master ~]#  vim /etc/sysconfig/selinux
+     <br>SELINUX=disabled
+</span></h5>
+    <br>
+    
+    <h5><span class="w3-code w3-red">Step:4  Add Puppet Repository
+    </span></h5>
+    
+<h5><span class="w3-code w3-black">
+  <br>[root@master ~]# rpm -Uvh https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm
+   <br>[root@master ~]# reboot
+</span></h5> 
+<br>
+<h5><span class="w3-code w3-red">Step:5 Install and Configure Puppetserver
+</span></h5>
+
+<h5><span class="w3-code w3-black">
+  <br>[root@master ~]# yum -y install puppetserver
+   <br>[root@master ~]# vim /etc/sysconfig/puppetserver
+    <br> JAVA_ARGS="-Xms1g -Xmx1g ...."
+    <br>
+    <br># go to the puppet configuration directory and edit the 'puppet.conf' file.
+    <br>cd /etc/puppetlabs/puppet
+<br>vim puppet.conf
+<br># add the following configuration
+<br>[master]
+<br>dns_alt_names=master.example.com,puppet
+<br>
+<br>[main]
+<br>certname = master.example.com
+<br>server = master.example.com
+<br>environment = production
+<br>runinterval = 1h
+</span></h5>  
+<br>
+
+<h5><span class="w3-code w3-black">[root@master ~]# systemctl start puppetserver
+    <br>   [root@master ~]# systemctl puppetserver  </span></h5>
+    <br>
+    <h5><span class="w3-code w3-black">firewall-cmd --add-port=8140/tcp --permanent
+<br>firewall-cmd --reload</span></h5>
+
+<!-- Contact/Area Container -->
+
+<div class="w3-container" id="contact">
+    <h2>Please email me if you face any issue.</h2>
+    <form action="mailto:Mdsulemanroayl23@gmail.com" method="get" enctype="text/plain">
+      <p><strong>Name: <input type="text" name="name"/></p>
+      <p><strong>Email: <input type="text" name="email"/></p>
+      <p><strong>Comments:
+        <br />
+        <textarea name="comments" rows = "12" cols = "35">Send your comments to owner.</textarea>
+        <br>
+      <p><input type="submit" name="submit" value="Send" />
+        <form action="mailto:allishah2490@gmail.com" 
+         enctype="text/plain" onsubmit="location.href='thanks.html';" >
+        <input type="reset" name="reset" value="Clear Form" />
+      </p>
+    </form>
+  </body>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
