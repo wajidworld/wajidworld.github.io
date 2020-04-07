@@ -195,12 +195,11 @@ configuration files to reflect their project.<i><p>
      <br>SELINUX=disabled
 </span></h5>
     <br>
-    
     <h5><span class="w3-code w3-red">Step:4  Add Puppet Repository
     </span></h5>
     
 <h5><span class="w3-code w3-black">
-  <br>[root@master ~]# rpm -Uvh https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm
+  [root@master ~]# rpm -Uvh https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm
    <br>[root@master ~]# reboot
 </span></h5> 
 <br>
@@ -208,17 +207,16 @@ configuration files to reflect their project.<i><p>
 </span></h5>
 
 <h5><span class="w3-code w3-black">
-  <br>[root@master ~]# yum -y install puppetserver
+[root@master ~]# yum -y install puppetserver
    <br>[root@master ~]# vim /etc/sysconfig/puppetserver
     <br> JAVA_ARGS="-Xms1g -Xmx1g ...."
     <br>
     <br># go to the puppet configuration directory and edit the 'puppet.conf' file.
     <br>cd /etc/puppetlabs/puppet
-<br>vim puppet.conf
+<br>[root@master ~]# vim puppet.conf
 <br># add the following configuration
 <br>[master]
 <br>dns_alt_names=master.example.com,puppet
-<br>
 <br>[main]
 <br>certname = master.example.com
 <br>server = master.example.com
@@ -229,9 +227,8 @@ configuration files to reflect their project.<i><p>
 
 <h5><span class="w3-code w3-black">[root@master ~]# systemctl start puppetserver
     <br>   [root@master ~]# systemctl puppetserver  </span></h5>
-    <br>
-    <h5><span class="w3-code w3-black">firewall-cmd --add-port=8140/tcp --permanent
-<br>firewall-cmd --reload</span></h5>
+    <h5><span class="w3-code w3-black">[root@master ~]# firewall-cmd --add-port=8140/tcp --permanent
+<br>[root@master ~]# firewall-cmd --reload</span></h5>
 <br>
     <h5><span class="w3-code w3-red">Configure Puppet Agent:-
  </span></h5>
@@ -240,11 +237,11 @@ configuration files to reflect their project.<i><p>
     <h5><span class="w3-code w3-red">Step:1 Install and Configure Puppet Agent
  </span></h5>
     <h5><span class="w3-code w3-black">[root@agent ~]# yum install -y puppet-agent
-    <br>   [root@master ~]# systemctl puppetserver  </span></h5>
+    <br>   [root@agent ~]# systemctl puppetserver  </span></h5>
     <br>
     
     <h5><span class="w3-code w3-black">[root@agent ~]# cd /etc/puppetlabs/puppet
-<br>vim puppet.conf
+<br>[root@agent ~]# vim puppet.conf
 <br># Paste the following configuration.
  <br> [main]
  <br>certname = agent.example.com
@@ -252,7 +249,7 @@ configuration files to reflect their project.<i><p>
  <br>environment = production
  <br>runinterval = 1h
    </span></h5>  
-    
+    <br>
     <h5><span class="w3-code w3-red">Step:2 # Next, we will register the puppet agent to the puppet master.
 <br># Run the command below on the puppet agent shell.
   </span></h5>
@@ -260,10 +257,9 @@ configuration files to reflect their project.<i><p>
      </span></h5>
     
     <h5><span class="w3-code w3-red">The puppet agent is now running on the server, and it's attempting to register itself to the puppet master.
-    
+    <br>
 <br>Step:3  Now back to the puppet master shell and run the command below.   
   </span></h5>
-    <br>
     
     <h5><span class="w3-code w3-black">[root@master ~]# /opt/puppetlabs/bin/puppet cert list
      </span></h5>
@@ -309,6 +305,7 @@ configuration files to reflect their project.<i><p>
       <h5><span class="w3-code w3-red">Run below command on agent<span></h5>
        <h5><span class="w3-code w3-black">[root@agent ~]#  /opt/puppetlabs/bin/puppet agent --test<span></h5>
        <h5><span class="w3-code w3-red"> #The command will retrieve new manifest configuration file from the puppet master and then apply it to the agent server.
+<br>
           <br>Open your web browser and type the IP address of the puppet agent.
          <span></h5>
          
@@ -316,7 +313,7 @@ configuration files to reflect their project.<i><p>
 
 <br>And you will get the default HTTP page.<span></h5>
        <br>
-           <h5><span class="w3-code w3-red">Now, You are ready to use it! <span></h5>
+           <h5><span class="w3-code w3-red">Now, You are ready to use puppet! <span></h5>
            
       
    
