@@ -140,7 +140,7 @@ body, html {
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">1. Pods</span></h5>
 
 <h5><span class="w3-code w3-red">
-<br>$ kubectl get pods
+$ kubectl get pods
 <br>$ kubectl get pods --all-namespaces
 <br>$ kubectl get pod monkey -o wide
 <br>$ kubectl get pod monkey -o yaml
@@ -156,7 +156,7 @@ body, html {
 
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">3. Scaling PODs</span></h5>
     <h5><span class="w3-code w3-red">
-<br>$ kubectl scale deployment/POD_NAME --replicas=N
+$ kubectl scale deployment/POD_NAME --replicas=N
 </span></h5> 
     <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">4. POD Upgrade and history</span></h5>
     
@@ -229,7 +229,7 @@ body, html {
 
 <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">11. DaemonSets</span></h5>
 <h5><span class="w3-code w3-red">
-<br>$ kubectl get daemonsets
+$ kubectl get daemonsets
 <br>$ kubectl get ds
 </span></h5>
 
@@ -258,7 +258,7 @@ body, html {
 <br>$ kubectl get events
 </span></h5>
     
-    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">14. Role Based Access Control</span></h5>
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">15. Role Based Access Control</span></h5>
 <h5><span class="w3-code w3-red">$ kubectl create role fluent-reader --verb=get --verb=list --verb=watch --resource=pods
 <br>$ kubectl create rolebinding foo --role=fluent-reader --user=minikube
 <br>$ kubectl get rolebinding foo -o yaml
