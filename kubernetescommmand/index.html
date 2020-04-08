@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://linuxhero.tk/#home">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+      <a href="http://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+    <a href="http://linuxhero.tk/#Topics">New Topics</a>
+    <a href="http://linuxhero.tk/#about">About</a>
+    <a href="http://linuxhero.tk/#contact">Contact Us</a>
+  </div>
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+  <div class="w3-container">
+  <div class="w3-content" style="max-width:700px">
+   <img src="/Docker-cheat-sheet.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+  </div>
+     
+<!-- Content -->
+<div class="w3-container">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">List Of Kubernetes Commands</span></h5>
+    
+    
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">1. Pods</span></h5>
+
+<h5><span class="w3-code w3-red">
+<br>$ kubectl get pods
+<br>$ kubectl get pods --all-namespaces
+<br>$ kubectl get pod monkey -o wide
+<br>$ kubectl get pod monkey -o yaml
+<br>$ kubectl describe pod monkey
+</span></h5> 
+
+   
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">2. Create Deployments</span></h5>
+      <h5><span class="w3-code w3-red">Create single deployment:
+<br>$ kubectl run monkey --image=monkey --record
+</span></h5> 
+
+
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">3. Scaling PODs</span></h5>
+    <h5><span class="w3-code w3-red">
+<br>$ kubectl scale deployment/POD_NAME --replicas=N
+</span></h5> 
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">4. POD Upgrade and history</span></h5>
+    
+    <h5><span class="w3-code w3-red">List history of deployments:
+<br>$ kubectl rollout history deployment/DEPLOYMENT_NAME
+</span></h5> 
+    
+   
+    <h5><span class="w3-code w3-red">Jump to specific revision:
+<br>$ kubectl rollout undo deployment/DEPLOYMENT_NAME --to-revision=N
+</span></h5>
+
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">5. Services</span></h5>
+
+<h5><span class="w3-code w3-red">List services:
+<br>$ kubectl get services
+<br>
+<br>Expose PODs as services (creates endpoints)
+<br>$ kubectl expose deployment/monkey --port=2001 --type=NodePort
+</span></h5>
+
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">6. Volumes</span></h5>
+
+
+<h5><span class="w3-code w3-red">List Persistent Volumes and Persistent Volumes Claims::
+<br>$ kubectl get pv
+<br>$ kubectl get pvc
+</span></h5>
+
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">6. Secrets</span></h5>
+
+<h5><span class="w3-code w3-red">List Persistent Volumes and Persistent Volumes Claims::
+<br>$ kubectl get secrets
+<br>$ kubectl create secret generic --help
+<br>$ kubectl create secret generic mysql --from-literal=password=root
+<br>$ kubectl get secrets mysql -o yaml
+</span></h5>
+
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">7. ConfigMaps</span></h5>
+
+<h5><span class="w3-code w3-red">List Persistent Volumes and Persistent Volumes Claims:
+<br>$ kubectl create configmap foobar --from-file=config.js
+<br>$ kubectl get configmap foobar -o yaml
+</span></h5>
+
+
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">8. DNS</span></h5>
+
+<h5><span class="w3-code w3-red">List DNS-PODs:
+<br>$ kubectl get pods --all-namespaces |grep dns
+<br>
+<br>Check DNS for pod nginx (assuming a busybox POD/container is running)
+<br>$ kubectl exec -ti busybox -- nslookup nginx
+<br>Note: kube-proxy running in the worker nodes manage services and set iptables rules to direct traffic.
+</span></h5>
+
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">9. Ingress</span></h5>
+
+<h5><span class="w3-code w3-red">List DNS-PODs:
+<br>$ kubectl get ingress
+<br>$ kubectl expose deployment ghost --port=2368
+</span></h5>
+
+
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">10. Horizontal Pod Autoscaler</span></h5>
+<h5><span class="w3-code w3-red">When heapster runs:
+<br>$ kubectl get hpa
+<br>$ kubectl autoscale --help
+</span></h5>
+
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">11. DaemonSets</span></h5>
+<h5><span class="w3-code w3-red">
+<br>$ kubectl get daemonsets
+<br>$ kubectl get ds
+</span></h5>
+
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">12. Scheduler</span></h5>
+
+<h5><span class="w3-code w3-red">NodeSelector based policy:
+<br>$ kubectl label node minikube foo=bar
+<br>
+<br>Node Binding through API Server:
+<br>$ kubectl proxy 
+<br>$ curl -H "Content-Type: application/json" -X POST --data @binding.json http://localhost:8001/api/v1/namespaces/default/pods/foobar-sched/binding
+</span></h5>
+
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">13. Taints and Tolerations</span></h5>
+
+
+<h5><span class="w3-code w3-red">NodeSelector based policy:
+<br>$ $ kubectl taint node master foo=bar:NoSchedule
+</span></h5>
+
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">14. Troubleshooting</span></h5>
+<h5><span class="w3-code w3-red">$ kubectl describe
+<br>$ kubectl logs
+<br>$ kubectl exec
+<br>$ kubectl get nodes --show-labels
+<br>$ kubectl get events
+</span></h5>
+
+
+</div>
+</div>
+</div>
+<!-- Menu Container -->
+
+
+<!-- Contact/Area Container -->
+ 
+<div class="w3-container" id="contact">
+    <h2>Please email me if you face any issue.</h2>
+    <form action="mailto:Mdsulemanroayl23@gmail.com" method="get" enctype="text/plain">
+      <p><strong>Name: <input type="text" name="name"/></p>
+      <p><strong>Email: <input type="text" name="email"/></p>
+      <p><strong>Comments:
+        <br />
+        <textarea name="comments" rows = "12" cols = "35">Send your comments to owner.</textarea>
+        <br>
+      <p><input type="submit" name="submit" value="Send" />
+        <form action="mailto:allishah2490@gmail.com" 
+         enctype="text/plain" onsubmit="location.href='thanks.html';" >
+        <input type="reset" name="reset" value="Clear Form" />
+      </p>
+    </form>
+  </body>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
