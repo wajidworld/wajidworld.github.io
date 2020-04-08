@@ -150,9 +150,8 @@ Nagios</span></h5>
  </span></h5>
  <br>
     
-<h5><span class="w3-code w3-red">Configure Nagios:-
- </span></h5>
- <br>
+
+
 <h5><span class="w3-code w3-red"> Step:1 Install LAMP
 </span></h5> 
 
@@ -206,37 +205,40 @@ Nagios</span></h5>
 
 <h5><span class="w3-code w3-black">
 [root@server ~]#  yum install gcc glibc glibc-common make gettext automake autoconf wget openssl-devel net-snmp net-snmp-utils epel-release perl-Net-SNMP
-<br>
-[root@server ~]# cd /tmp
-[root@server ~]# wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
-[root@server ~]# tar zxf nagios-plugins.tar.gz
+<br>[root@server ~]# cd /tmp
+<br>[root@server ~]# wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
+<br>[root@server ~]# tar zxf nagios-plugins.tar.gz
 </span></h5>  
 <br>
 
 <h5><span class="w3-code w3-black"># Once the Nagios Plugins archive is extracted, run the following commands to compile and install the Nagios Plugins on your server
-[root@server ~]# cd /tmp/nagios-plugins-release-2.2.1/
-[root@server ~]# ./tools/setup
-[root@server ~]# ./configure
-[root@server ~]# make
-[root@server ~]# make install
+<br>[root@server ~]# cd /tmp/nagios-plugins-release-2.2.1/
+<br>[root@server ~]# ./tools/setup
+<br>[root@server ~]# ./configure
+<br>[root@server ~]# make
+<br>[root@server ~]# make install
  </span></h5>
+<br>
  
-    <h5><span class="w3-code w3-red">6. Accessing Nagios Core
- </span></h5>
-[root@server ~]# systemctl start nagios
+    <h5><span class="w3-code w3-red">6. Accessing Nagios Core</span></h5>  
+
+<br><h5><span class="w3-code w3-black">
+[root@server ~]# systemctl start nagios</span></h5>  
 <br>
 <h5><span class="w3-code w3-red"> To access Nagios Core, open your browser and navigate to http://YOUR-IP-ADDRESS/nagios and log in using the nagiosadmin user account which you have created in one of the previous steps in this tutorial.
 
 <br>After you have successfully logged in, you will be presented with the Nagios Core home screen.  </span></h5>
  
     
-   
+   <br>
            <h5><span class="w3-code w3-red">Now, You are ready to use Nagios! <span></h5>
            
       
    
 
-
+</div>
+ </div>
+    </div>
 
     
     
