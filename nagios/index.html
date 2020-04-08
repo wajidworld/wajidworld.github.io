@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #000000;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #808080;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://linuxhero.tk/#home">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+       <a href="http://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+       <a href="http://linuxhero.tk/linuxcommands/">Linux Commands</a>
+       <a href="http://linuxhero.tk/ntp/">Configure NTP</a>
+       <a href="http://linuxhero.tk/ssh/">Configure SSH</a>
+       <a href="http://linuxhero.tk/nfs/">Configure NFS</a>
+       <a href="http://linuxhero.tk/iscsi/">Configure iSCSI Storage</a>  
+        <a href="http://linuxhero.tk/dhcp/">Configure Dnsmasq</a>
+         <a href="http://linuxhero.tk/ftp/">Configure FTP Server</a>
+      
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+    <a href="https://linuxhero.tk/#Topics">New Topics</a>
+    <a href="https://linuxhero.tk/#about">About</a>
+    <a href="https://linuxhero.tk/#contact">Contact</a>
+  </div>
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-orange w3-scale w3-large">
+     <img src="/programming.gif" alt="Computer man" style="width:100px;height:100px;">
+<!-- Content -->
+<div style="max-width:1200px">
+
+  <div class="w3-content" style="max-width:1000px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-black">	
+Nagios</span></h5>
+
+  <p><i>Nagios (also known as Nagios Core) is a free and open source application which can be used for monitoring Linux or Windows servers, network infrastructures and applications. When properly configured it will alert you when something on your server goes wrong and then notify you again once the problem has been resolved. In this tutorial, we will show you how to install and configure the latest Nagios Core version on a CentOS 7.<i><p>
+
+
+
+
+<h5><span class="w3-code w3-red">Lets start to configure Nagios:-
+ </span></h5>
+ <br>
+    
+<h5><span class="w3-code w3-red">Configure Nagios:-
+ </span></h5>
+ <br>
+<h5><span class="w3-code w3-red"> Step:1 Install LAMP
+</span></h5> 
+
+<h5><span class="w3-code w3-black">[root@server ~]# yum install httpd mariadb-server php php-mysql
+<br>[root@server ~]# mysql_secure_installation
+<br>[root@server ~]# systemctl enable httpd.service
+<br>[root@server ~]# systemctl enable mariadb.service
+
+</span></h5>
+ <br>
+ <h5><span class="w3-code w3-red">Step:2 Install the required packages
+    </span></h5>
+    
+  <h5><span class="w3-code w3-black">[root@server ~]#  yum install gcc glibc glibc-common wget gd gd-devel perl postfix
+   </span></h5>
+  <br>
+  
+    <h5><span class="w3-code w3-red">Step:3 Download and Install, Configure Nagios Core
+    </span></h5>
+     <h5><span class="w3-code w3-black">[root@server ~]# cd /tmp
+     <br>[root@server ~]# wget -O nagioscore.tar.gz https://github.com/NagiosEnterprises/nagioscore/archive/nagios-4.4.2.tar.gz
+     <br>[root@server ~]# tar xzf nagioscore.tar.gz
+     <br>[root@server ~]# cd /tmp/nagioscore-nagios-4.4.2
+     <br>[root@server ~]# ./configure
+      <br># After the configuration is completed, you can now compile Nagios Core by execution the following command.
+     <br>[root@server ~]# make all
+     <br>You also need to run the following commands to create the nagios user and group and add apache to the nagios group.
+     <br>[root@server ~]# make install-groups-users
+     <br>[root@server ~]# usermod -a -G nagios apache
+     <br>Now, you can finally run the following command in order to install Nagios Core.
+     <br>[root@server ~]# make install
+     <br>[root@server ~]# make install-daemoninit
+      <br>[root@server ~]# make install-config
+     <br>[root@server ~]# make install-commandmode
+     <br>[root@server ~]# make install-webconf
+     <br>
+     <br>[root@server ~]# systemctl restart httpd
+     
+</span></h5>
+    <br>
+    <h5><span class="w3-code w3-red">Step:4  Create nagiosadmin User Account
+    </span></h5>
+    
+<h5><span class="w3-code w3-black">
+ [root@server ~]# htpasswd -c /usr/local/nagios/etc/htpasswd.users nagiosadmin
+</span></h5> 
+
+<br>
+<h5><span class="w3-code w3-red">Step:5 Install Nagios Plugins
+</span></h5>
+
+<h5><span class="w3-code w3-black">
+[root@server ~]#  yum install gcc glibc glibc-common make gettext automake autoconf wget openssl-devel net-snmp net-snmp-utils epel-release perl-Net-SNMP
+<br>
+[root@server ~]# cd /tmp
+[root@server ~]# wget --no-check-certificate -O nagios-plugins.tar.gz https://github.com/nagios-plugins/nagios-plugins/archive/release-2.2.1.tar.gz
+[root@server ~]# tar zxf nagios-plugins.tar.gz
+</span></h5>  
+<br>
+
+<h5><span class="w3-code w3-black"># Once the Nagios Plugins archive is extracted, run the following commands to compile and install the Nagios Plugins on your server
+[root@server ~]# cd /tmp/nagios-plugins-release-2.2.1/
+[root@server ~]# ./tools/setup
+[root@server ~]# ./configure
+[root@server ~]# make
+[root@server ~]# make install
+ </span></h5>
+ 
+    <h5><span class="w3-code w3-red">6. Accessing Nagios Core
+ </span></h5>
+[root@server ~]# systemctl start nagios
+<br>
+<h5><span class="w3-code w3-red"> To access Nagios Core, open your browser and navigate to http://YOUR-IP-ADDRESS/nagios and log in using the nagiosadmin user account which you have created in one of the previous steps in this tutorial.
+
+<br>After you have successfully logged in, you will be presented with the Nagios Core home screen.  </span></h5>
+ 
+    
+   
+           <h5><span class="w3-code w3-red">Now, You are ready to use Nagios! <span></h5>
+           
+      
+   
+
+
+
+    
+    
+    
+    
+<!-- Contact/Area Container -->
+
+<div class="w3-container" id="contact">
+    <h2>Please email me if you face any issue.</h2>
+    <form action="mailto:Mdsulemanroayl23@gmail.com" method="get" enctype="text/plain">
+      <p><strong>Name: <input type="text" name="name"/></p>
+      <p><strong>Email: <input type="text" name="email"/></p>
+      <p><strong>Comments:
+        <br />
+        <textarea name="comments" rows = "12" cols = "35">Send your comments to owner.</textarea>
+        <br>
+      <p><input type="submit" name="submit" value="Send" />
+        <form action="mailto:allishah2490@gmail.com" 
+         enctype="text/plain" onsubmit="location.href='thanks.html';" >
+        <input type="reset" name="reset" value="Clear Form" />
+      </p>
+    </form>
+  </body>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
