@@ -162,8 +162,9 @@ Configure NTP Server</span></h5>
 Install NTPd and Configure NTP server for time adjustment.<b><p>
   <h5 <span class="w3-tag w3-red">[NTPd Server] |192.0.0.20 ---------------- 192.0.0.30|  [NTPd Client] <br>Server.example.com  <--------------------->  Client.example.com</span></h5>
   <p><b>Server Configuration:-<b><p>
-<h5><span class="w3-code w3-black">[root@<br>server ~]# yum -y install ntp
+<h5><span class="w3-code w3-black">[root@server ~]# yum -y install ntp
 <br>[root@server ~]# vi /etc/ntp.conf
+<br>#edit entry as per below
 <br>restrict default kod nomodify notrap nopeer noquery
 <br>restrict -6 default kod nomodify notrap nopeer noquery
 <br>restrict 127.0.0.1
@@ -177,18 +178,18 @@ Install NTPd and Configure NTP server for time adjustment.<b><p>
 <br>keys /etc/ntp/keys
 <br>
  <br>[root@server ~]# systemctl start ntpd
-<br>[root@<br>server ~]# systemctl enable ntpd
+<br>[root@server ~]# systemctl enable ntpd
  </span></h5>
  <p><b>	If Firewalld is running, allow NTP service. NTP uses 123/UDP.<b<p>
  
- <h5><span class="w3-code w3-black">/>[root@server ~]# firewall-cmd --add-service=ntp --permanent
+ <h5><span class="w3-code w3-black">[root@server ~]# firewall-cmd --add-service=ntp --permanent
 <br>success
 <br>[root@server ~]# firewall-cmd --reload
 <br>success
 </span></h5>
 <p><b>To Verify<b<p>
 <h5><span class="w3-code w3-black">
-[root@dlp ~]# ntpq -p
+[root@server ~]# ntpq -p
 </span></h5>
  
 <p><b>NTP Client Configuration:-<b><p>
@@ -208,7 +209,7 @@ Install NTPd and Configure NTP server for time adjustment.<b><p>
     
 <h5><span class="w3-code w3-black">
   [root@server ~]# systemctl start ntpd
-<br>[root@<br>server ~]# systemctl enable ntpd
+<br>[root@server ~]# systemctl enable ntpd
  </span></h5> 
 
    
