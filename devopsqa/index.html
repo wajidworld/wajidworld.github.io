@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="http://linuxhero.tk/#home">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+      <a href="http://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="http://linuxhero.tk/webapp/">What is devops?</a>
+      <a href="https://mail.google.com/mail/u/0/#inbox">What are the tools of devops?</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+    <a href="http://linuxhero.tk/#Topics">New Topics</a>
+    <a href="http://linuxhero.tk/#about">About</a>
+    <a href="http://linuxhero.tk/#contact">Contact Us</a>
+  </div>
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+  <div class="w3-container">
+  <div class="w3-content" style="max-width:700px">
+   
+</div>
+     
+<!-- Content -->
+<div class="w3-container">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Devops QA</span></h5>
+  
+    <iframe src="/devopsqa.pdf"
+    style="width:700px; height:1200px;" frameborder="0">
+</iframe>
+    
+</div>
+</div>
+
+
+
+
+<!-- Menu Container -->
+
+
+<!-- Contact/Area Container -->
+ 
+<div class="w3-container" id="contact">
+    <h2>Please email me if you face any issue.</h2>
+    <form action="mailto:Mdsulemanroayl23@gmail.com" method="get" enctype="text/plain">
+      <p><strong>Name: <input type="text" name="name"/></p>
+      <p><strong>Email: <input type="text" name="email"/></p>
+      <p><strong>Comments:
+        <br />
+        <textarea name="comments" rows = "12" cols = "35">Send your comments to owner.</textarea>
+        <br>
+      <p><input type="submit" name="submit" value="Send" />
+        <form action="mailto:allishah2490@gmail.com" 
+         enctype="text/plain" onsubmit="location.href='thanks.html';" >
+        <input type="reset" name="reset" value="Clear Form" />
+      </p>
+    </form>
+  </body>
+  </div>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-light-grey w3-padding-48 w3-large">
+  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></p>
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-dark-grey", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-dark-grey";
+}
+document.getElementById("myLink").click();
+</script>
+</body>
+</html>
