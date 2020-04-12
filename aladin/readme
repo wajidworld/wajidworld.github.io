@@ -1,0 +1,39 @@
+For full installation instructions please read the manual.
+
+A summary to install and run the program follows:-
+
+A:
+INSTALL C:\ALADDIN\
+C:
+CD \ALADDIN
+SETSND
+ALADDIN
+
+
+
+N.B.
+
+For slow machines, selecting NO SOUND within the SETSND program
+will show a marked improvement in speed.
+
+For machines with less than the required 570K of base memory free
+similarly selecting NO SOUND within the SETSND program will
+enable the program to run with less memory.
+
+The program makes use of 1Mb of XMS and 1Mb of EMS and therefore
+both of these must be present in your machine.
+This is usually accomplished by having the EMM386 driver in your
+CONFIG.SYS file.
+
+The basic version of Aladdin requires 570K of base memory.  However,
+selecting enhanced music mode during the SETSND program will require
+more base memory in order to play music.  Similarly, the more
+sophisticated your sound card (Stereo or 16-Bit) the more memory
+the program will require.  If you do not get music playing within
+the game, try freeing up more base memory or selecting NO to 
+enhanced music or selecting a simpler version of your sound card.
+
+During the game, the volume of the music may be adjusted by pressing
+the PAGE UP and PAGE DOWN.  This controls the volume with respect to
+the sound effects.
+
