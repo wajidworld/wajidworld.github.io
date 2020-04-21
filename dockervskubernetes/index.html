@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style>
+body, html {
+  height: 100%;
+  font-family: "Inconsolata", sans-serif;
+  }
+.navbar {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  background-color: red;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="https://linuxhero.tk">Home</a>
+   <div class="dropdown">
+     <button class="dropbtn">Linux 
+        <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+        <a href="https://linuxhero.tk/linuxinfo/">Linux Introduction</a>
+       <a href="https://linuxhero.tk/linuxdistros/">Linux Distributions</a>
+       <a href="https://linuxhero.tk/linuxcommands/">Linux Commands</a>
+       <a href="https://linuxhero.tk/ntp/">Configure NTP</a>
+       <a href="https://linuxhero.tk/ssh/">Configure SSH</a>
+       <a href="https://linuxhero.tk/nfs/">Configure NFS</a>
+       <a href="https://linuxhero.tk/iscsi/">Configure iSCSI Storage</a>  
+        <a href="https://linuxhero.tk/dhcp/">Configure Dnsmasq</a>
+       <a href="https://linuxhero.tk/ftp/">Configure FTP Server</a>
+       <a href="https://linuxhero.tk/lvm/">Configure LVM</a>
+     </div>
+    </div> 
+   <div class="dropdown">
+    <button class="dropbtn">Linux Troubleshooting 
+       <i class="fa fa-caret-down"></i>
+     </button>
+     <div class="dropdown-content">
+      <a href="https://linuxhero.tk/Analyzebottlenecks/">Steps To Analyze Linux Performance Bottlenecks</a>
+      <a href="https://linuxhero.tk/cpubottlenecks/">CPU Bottlenecks</a>
+        <a href="https://linuxhero.tk/memorybottlenecks/">Memory Bottlenecks</a>
+       <a href="https://linuxhero.tk/diskbottlenecks/">Disk Bottlenecks</a>
+       <a href="https://linuxhero.tk/networkbottlenecsk/">Network Bottlenecks</a>
+     </div>
+    </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://linuxhero.tk/devopsinfo/">What is Devops?</a>
+      <a href="https://linuxhero.tk/devopstools/">Devops Tools</a>
+      <a href="https://linuxhero.tk/jenkins/">Configure Jenkins</a>
+      <a href="https://linuxhero.tk/docker/">Configure Docker</a>
+      <a href="https://linuxhero.tk/kubernetes/">Configure Kubernetes</a>
+      <a href="https://linuxhero.tk/puppet/">Configure Puppet</a>
+      <a href="https://linuxhero.tk/ansible/">Configure Ansible</a>
+      <a href="https://linuxhero.tk/dockercommands/">Docker Commands</a>
+      <a href="https://linuxhero.tk/kubernetescommmand/">Kubernetes Commands</a>
+    </div>
+  </div>
+   <div class="dropdown">
+    <button class="dropbtn">Devops Projects
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://linuxhero.tk/devopsproject1/">Linux Automation using devops tools</a>
+ 
+    </div>
+  </div>
+  <div class="dropdown">
+    <button class="dropbtn">Monitoring Tools 
+       <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="https://linuxhero.tk/nagios/">Configure Nagios</a>
+      <a href="https://linuxhero.tk/splunk/"">Configure Splunk</a>
+    </div>
+  </div>
+    <a href="https://linuxhero.tk/#Topics">New Topics</a>
+    <a href="https://linuxhero.tk/privacy/">Privacy Policy</a>
+    <a href="https://linuxhero.tk/#about">About</a>
+    <a href="https://linuxhero.tk/#contact">Contact Us</a>
+  </div>
+
+
+<!-------------Top Menu End------------->
+
+
+<!-- Add a background color and large text to the whole page -->
+<div class="w3-sand w3-grayscale w3-large">
+  <div class="w3-container">
+  <div class="w3-content" style="max-width:700px">
+   <img src="/tools.jpg" style="width:100%;max-width:1000px" class="w3-margin-top">
+  </div>
+     
+<!-- Content -->
+<div class="w3-container">
+  <div class="w3-content" style="max-width:700px">
+    <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Docker Swarm Mode VS Kubernetes</span></h5>
+    <p><i> Docker Swarm Mode and Kubernetes are two of the most popular tools for container clustering and orchestration, despite their divergent philosophies and capabilities. Since both platforms are quite distinct, experience with one generally won’t be helpful with the other beyond the common experience of building Docker images, which both use. This makes your initial choice of which to work with even more important.<i><p>
+    <br>
+    
+
+   <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">What are Docker Swarm and Kubernetes?</span></h5>
+<p><i>Docker Swarm Mode and Kubernetes are two of the most popular tools for container clustering and orchestration, despite their divergent philosophies and capabilities. Since both platforms are quite distinct, experience with one generally won’t be helpful with the other beyond the common experience of building Docker images, which both use. This makes your initial choice of which to work with even more important.<i><p>
+
+<br>
+<p><i>Swarm mode allows developers and administrators to create and manage a virtual system, a “swarm,” that is composed of one or more Docker nodes. Every host in a given cluster runs a Swarm agent controlled by the Swarm manager(s), which schedules and orchestrates containers. The new features of Swarm mode include load balancing, service discovery, scaling, rolling updates, a secure data plane, and routing mesh.<i><p>
+<br>
+
+  <p><i>Kubernetes is an open-source cluster manager for containers. It was originally designed by Google, who based its development on years of experience working with Linux containers. Kubernetes clusters are made up of several components: pods, labels, services, and replication controllers.<i><p>
+<br>
+
+<p><i>Pods are the basic unit of scheduling in Kubernetes. They are a group of containers intended to be deployed and scheduled together, coordinating to execute a particular task. If you were to deploy a single container, it would be deployed as a single pod.<i><p>
+<br>
+<p><i>Labels represent user-defined attributes that are attached to pods.<i><p>
+ 
+ 
+<p><i>A service is a unit that acts as a basic load balancer and ambassador for other containers. Services are a way to interface with a group of containers; they allow you to simplify your container designs since they group together a logical collection of pods based on your labels.<i><p>
+
+<p><i>Replication controllers are a framework for defining horizontally scaled pods. These replication controllers are responsible for handling replicated pods. If containers go down, replication controllers will start up another container and kill that container when the first one comes back online.<i><p>
+  
+  <br>
+  <h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Installation</span></h5>
+  <p><i>Since Swarm mode is a part of your Docker engine, there is no additional installation necessary after you install Docker 1.12. To deploy Docker Swarm, use a fixed IP address and assign it to a network interface available to the host operating system. You now have everything you need to create a swarm.<i><p>
+  <br>
+  <p><i>Kubernetes installation is more involved, but can be simple if you use the right tools. Installing Kubernetes with kubeadm (a tool that is part of Kubernetes 1.4) is ideal for integrating with existing orchestration systems or bare metal environments. Weaveworks has contributed to kubeadm with the goal of making Kubernetes easier to install. The advantage of Kubernetes is that you have more ultimate control over the configuration of the software. Furthermore, most common platforms now have documentation available on how to set up Kubernetes.<i><p>
+<br>
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Features</span></h5>
+
+<p><i>Docker Swarm mode and Kubernetes are both feature-rich platforms that provide you with a rich panoply of features. For example, both solutions are compatible with Weave Net, our networking tool for connecting containers. Each have engaging communities for like minded enthusiasts to learn and collaborate. Both support persistent data storage via Kubernetes’ Persistent Volumes and Docker Swarm mode’s volume plugins. Because Swarm mode is part of Docker, you also have easy access to Docker’s native tools. A direct interface with tools, such as Docker Compose, isn’t available with Kubernetes, which works on top of Docker instead of with it.<i><p>
+<br>
+<p><i>Furthermore, the deployment of containers is handled differently between Swarm mode and Kubernetes. The winner here really depends on whether you prefer working with the native Docker tool set. Docker deployments are typically done through Docker Compose or the Docker command line. In Kubernetes, container deployment is usually done via kubectl, which is difficult to use because of Kubernetes’ complex and layered APIs. This, however, makes Kubernetes deployment more expressive. <i><p>
+<br>
+<h5 class="w3-center w3-padding-64"><span class="w3-tag w3-wide">Performance</span></h5>
+<p><i>Both Docker and Kubernetes claim to support clusters of up to 1,000 nodes with no performance degradation; Docker also claims to support up to 30,000 containers with no dip in performance. According to Kubernetes, 99 percent of its API calls return within one second, and 99 percent of Kubernetes pods and containers will open within five seconds.<i><p>
+<br>
+<p><i>Thanks to Swarm mode, the performance gap between Kubernetes and Docker is closing. Before Swarm mode was even introduced, a March 2016 study by Jeff Nickoloff evaluated the performance of both Docker Swarm and Kubernetes while running 30,000 containers on 1,000 node clusters. Nickoloff found that Swarm was roughly five times faster than Kubernetes when initializing a new container. But, he was impressed by the Kubernetes replication controller, which allowed him to create 3,000 container replicas in under 155 seconds. It should also be noted that this study was comparing setup time and not application performance.<i><p>
+<marquee behavior="scroll" bgcolor="#d9d9ff" direction="left">“Currently, DevOps is more like a philosophical movement, not yet a precise collection of practices, descriptive or prescriptive.” ~ Gene Kim </marquee>  
+   </div>
+</div>
+
+<!-- Menu Container -->
+
+
+<!-- Contact/Area Container -->
+ 
+
+
+<!-- End page content -->
+</div>
+
+<!-- Footer -->
+<footer class="w3-center w3-black w3-padding-48 w3-large">
+  
+<body>
+   <div class="list-group">
+     <a class="fa fa-linkedin-square" style="font-size:48px;color:white" href="https://www.linkedin.com/in/wajid-a-9b9545139/"></a>
+    </div>
+   </body>
+  
+</footer>
+
+<script>
+// Tabbed Menu
+function openMenu(evt, menuName) {
+  var i, x, tablinks;
+  x = document.getElementsByClassName("menu");
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";
+  }
+  tablinks = document.getElementsByClassName("tablink");
+  for (i = 0; i < x.length; i++) {
+    tablinks[i].className = tablinks[i].className.replace(" w3-black", "");
+  }
+  document.getElementById(menuName).style.display = "block";
+  evt.currentTarget.firstElementChild.className += " w3-black";
+}
+document.getElementById("myLink").click();
+</script>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/5e8ea64d69e9320caac1c190/default';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+  
+</body>
+</html>
