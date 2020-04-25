@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset xmlns="https://linuxher.tk/">
+
+   <url>
+
+      <loc>https://linuxher.tk/</loc>
+
+      <lastmod>2020-04-01</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://linuxhero.tk/devopsinfo/</loc>
+
+         <lastmod>2020-04-01</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://linuxhero.tk/linuxcommands/</loc>
+
+      <lastmod>2020-04-01</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://linuxhero.tk/devopstools/</loc>
+
+     <lastmod>2020-04-01</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+   <url>
+
+      <loc>https://linuxhero.tk/dockercommands/</loc>
+
+  <lastmod>2020-04-01</lastmod>
+
+      <changefreq>monthly</changefreq>
+
+      <priority>0.8</priority>
+
+   </url>
+
+</urlset>
